@@ -1,3 +1,18 @@
+## 1.0.1
+
+#### Android
+* **[수정] 신규 프로젝트에서 앱 빌드가 실패하던 문제**
+  * `RevupFlutterPlugin` 이 `RevupInitializeListener`, `RewardedVideoAdListener`,
+    `InterstitialAdListener`, `RewardedInterstitialAdShowListener` 를
+    public 시그니처에 구현하는데, 네이티브 SDK 의존성이 `implementation` 이라
+    앱 모듈로 전파되지 않았다.
+  * 그 결과 앱이 `GeneratedPluginRegistrant` 를 컴파일할 때 실패했다.
+    ```
+    GeneratedPluginRegistrant.java:19: error: cannot access RevupInitializeListener
+    ```
+  * 우회하려면 앱의 `build.gradle` 에 revupCore/revupAndroid/revupLuckyEvent 를
+    직접 선언해야 했다. `api` 로 변경해 그럴 필요가 없어졌다.
+
 ## 1.0.0
 
 Revup Flutter Plugin 최초 공개 배포.

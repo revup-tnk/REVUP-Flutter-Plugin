@@ -51,7 +51,11 @@ android {
 }
 
 dependencies {
-    implementation 'com.tnkfactory.revup:revupCore:1.0.2'
-    implementation 'com.tnkfactory.revup:revupAndroid:1.0.2'
-    implementation 'com.tnkfactory.revup:revupLuckyEvent:1.0.2'
+    // api 로 노출해야 한다. RevupFlutterPlugin 이 RevupInitializeListener,
+    // RewardedVideoAdListener 등 네이티브 SDK 타입을 public 시그니처에 구현하고 있어,
+    // implementation 으로 두면 앱 모듈이 GeneratedPluginRegistrant 를 컴파일할 때
+    // "cannot access RevupInitializeListener" 로 빌드가 실패한다.
+    api 'com.tnkfactory.revup:revupCore:1.0.2'
+    api 'com.tnkfactory.revup:revupAndroid:1.0.2'
+    api 'com.tnkfactory.revup:revupLuckyEvent:1.0.2'
 }
