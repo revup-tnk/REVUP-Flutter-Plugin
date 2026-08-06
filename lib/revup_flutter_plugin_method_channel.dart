@@ -1,0 +1,280 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+
+import 'revup_flutter_plugin_platform_interface.dart';
+
+/// An implementation of [RevupFlutterPluginPlatform] that uses method channels.
+class MethodChannelRevupFlutterPlugin extends RevupFlutterPluginPlatform {
+  /// The method channel used to interact with the native platform.
+  @visibleForTesting
+  final methodChannel = const MethodChannel('revup_flutter_plugin');
+
+  @override
+  Future<bool?> initialize(
+      [String mediaId = "",
+      String mediaSecret = "",
+      String callbackTag = "",
+      String childYN = ""]) async {
+    final result =
+        await methodChannel.invokeMethod<bool>('initialize', <String, dynamic>{
+      "mediaId": mediaId,
+      "mediaSecret": mediaSecret,
+      "callbackTag": callbackTag,
+      "childYN": childYN
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> setUserId(String userId) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setUserId', <String, dynamic>{"userId": userId});
+    return result;
+  }
+
+  @override
+  Future<bool?> setUserIdChild(String userId, int child) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setUserIdChild', <String, dynamic>{
+      "userId": userId,
+      "child": child
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> setRewardedCheckParam(String param) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setRewardedCheckParam', <String, dynamic>{"param": param});
+    return result;
+  }
+
+  @override
+  Future<bool?> isInitialized() async {
+    final result = await methodChannel.invokeMethod<bool>('isInitialized');
+    return result;
+  }
+
+  @override
+  Future<String?> getSDKVersion() async {
+    final result = await methodChannel.invokeMethod<String>('getSDKVersion');
+    return result;
+  }
+
+  @override
+  Future<String?> getNetworkVersions() async {
+    final result =
+        await methodChannel.invokeMethod<String>('getNetworkVersions');
+    return result;
+  }
+
+  @override
+  Future<Map?> getUnitStatus(String unitId) async {
+    final result = await methodChannel.invokeMethod<Map>(
+        'getUnitStatus', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> showMaxMediationDebugger() async {
+    final result =
+        await methodChannel.invokeMethod<bool>('showMaxMediationDebugger');
+    return result;
+  }
+
+  @override
+  Future<bool?> showAdmobMediationDebugger() async {
+    final result =
+        await methodChannel.invokeMethod<bool>('showAdmobMediationDebugger');
+    return result;
+  }
+
+  @override
+  Future<bool?> setVolumeOff(bool isOn) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setVolumeOff', <String, dynamic>{"isOn": isOn});
+    return result;
+  }
+
+  @override
+  Future<bool?> setShowWithLoad2BackgroundColor(String red, String green, String blue, String alpha) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'setShowWithLoad2BackgroundColor', <String, dynamic>{
+      "red": red,
+      "green": green,
+      "blue": blue,
+      "alpha": alpha
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> setShowWithLoad2IndicatorStyle(bool isMedium, bool isHidden) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'setShowWithLoad2IndicatorStyle', <String, dynamic>{
+      "isMedium": isMedium,
+      "isHidden": isHidden
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> setShowWithLoad2ErrorAlert(String msg, bool isHidden) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'setShowWithLoad2ErrorAlert', <String, dynamic>{
+      "msg": msg,
+      "isHidden": isHidden
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> showLuckyEvent() async {
+    final result = await methodChannel.invokeMethod<bool>('showLuckyEvent');
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventAppId(String eventId, String pid) async {
+    final result = await methodChannel.invokeMethod<bool>('setLuckyEventAppId', <String, dynamic>{
+      "appId": eventId,
+      "pubId": pid
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventUseSafeAreaWebView(bool useSafeArea) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventUseSafeAreaWebView', <String, dynamic>{"useSafeArea": useSafeArea});
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventHashMark(String hashMark) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventHashMark', <String, dynamic>{"hashMark": hashMark});
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventBaseUrl(String baseUrl) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventBaseUrl', <String, dynamic>{"baseUrl": baseUrl});
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventExtraParam(String key, String value) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventExtraParam', <String, dynamic>{
+      "key": key,
+      "value": value
+    });
+    return result;
+  }
+
+  @override
+  Future<bool?> rewardedVideoShowWithLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'rewardedVideoShowWithLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> rewardedVideoLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'rewardedVideoLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> loadRewardedInterstitial(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'loadRewardedInterstitial', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> rewardedInterstitialIsLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'rewardedInterstitialIsLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> rewardedVideoIsLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'rewardedVideoIsLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> rewardedVideoShow() async {
+    final result = await methodChannel.invokeMethod<bool>('rewardedVideoShow');
+    return result;
+  }
+
+  @override
+  Future<bool?> interstitialShowWithLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'interstitialShowWithLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> interstitialLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'interstitialLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> interstitialIsLoad(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'interstitialIsLoad', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> interstitialShow() async {
+    final result = await methodChannel.invokeMethod<bool>('interstitialShow');
+    return result;
+  }
+
+  @override
+  Future<Map?> getUnitStatusRewardedInterstitial(String unitId) async {
+    final result = await methodChannel.invokeMethod<Map>(
+        'getUnitStatusRewardedInterstitial',
+        <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> preLoadAllRewardedInterstitial() async {
+    final result = await methodChannel
+        .invokeMethod<bool>('preLoadAllRewardedInterstitial');
+    return result;
+  }
+
+  @override
+  Future<bool?> preLoadRewardedInterstitial(List<String>? unitIds) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'preLoadRewardedInterstitial', <String, dynamic>{"unitIds": unitIds});
+    return result;
+  }
+
+  @override
+  Future<bool?> showRewardedInterstitial(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'showRewardedInterstitial', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+
+  @override
+  Future<bool?> showWithPopupRewardedInterstitial(String unitId) async {
+    final result = await methodChannel.invokeMethod<bool>(
+        'showWithPopupRewardedInterstitial', <String, dynamic>{"unitId": unitId});
+    return result;
+  }
+}

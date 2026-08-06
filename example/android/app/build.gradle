@@ -1,0 +1,90 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace "com.tnkfactory.revup.flutter.example"
+    compileSdk 36
+    ndkVersion = "28.2.13676358"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += ['-Xskip-metadata-version-check']
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.tnkfactory.revup.sampleapp"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdkVersion 24
+        targetSdkVersion 36
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+
+        manifestPlaceholders = [
+                applicationName: "android.app.Application",   //android.app.Application, androidx.multidex.MultiDexApplication
+                adiscope_media_id: "MEDIA_ID 기입 필요",
+                adiscope_media_secret: "MEDIA_SECRET 기입 필요",
+                adiscope_sub_domain: "",   // 옵션값 (필요 시 담당자 전달값 기입)
+                revup_admob_id: "ADMOB_APP_ID 기입 필요"   // admob / max 연동 시 필수
+        ]
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    // bom으로 연동 시 어댑터별 버전을 명시하지 않아도 코어 모듈 버전으로 매핑된 버전의 어댑터가 자동으로 연동됨
+    implementation platform("com.tnkfactory.revup:revup-bom:1.0.2")
+
+    implementation 'com.tnkfactory.revup:revupCore'
+    implementation 'com.tnkfactory.revup:revupAndroid'
+    implementation 'com.tnkfactory.revup:revupLuckyEvent'
+    implementation 'com.tnkfactory.revup:adapter.admob'             // admob
+    implementation 'com.tnkfactory.revup:adapter.max'               // max
+    implementation 'com.tnkfactory.revup:adapter.chartboost'        // chartboost
+    implementation "com.tnkfactory.revup:adapter.pangle"            // pangle
+    implementation 'com.tnkfactory.revup:adapter.vungle'            // vungle
+    implementation "com.tnkfactory.revup:adapter.tnkpub"            // tnkpub
+}

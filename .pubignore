@@ -1,0 +1,56 @@
+# .pubignore 는 .gitignore 를 '대체'한다 (보완이 아니다).
+# 따라서 .gitignore 의 규칙을 여기에 그대로 옮겨두어야 build/ 같은 산출물이
+# 패키지에 섞여 들어가지 않는다.
+
+# --- 패키지에 포함하지 않을 내부 문서 ---
+CLAUDE.md
+AGENTS.md
+.ai/
+
+# --- 아래는 .gitignore 와 동일 ---
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release

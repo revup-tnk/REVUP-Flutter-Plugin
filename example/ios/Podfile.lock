@@ -1,0 +1,457 @@
+PODS:
+  - Ads-Global (8.1.1.1):
+    - Ads-Global/BUAdSDK (= 8.1.1.1)
+  - Ads-Global/BUAdSDK (8.1.1.1):
+    - Ads-Global/PangleSDK
+    - Ads-Global/TikTokBusinessSDK
+  - Ads-Global/PangleSDK (8.1.1.1)
+  - Ads-Global/TikTokBusinessSDK (8.1.1.1)
+  - AppLovinMediationBidMachineAdapter (3.7.1.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - BidMachine (= 3.7.1)
+  - AppLovinMediationBigoAdsAdapter (5.3.0.0):
+    - AppLovinSDK (>= 12.4.1)
+    - BigoADS (= 5.3.0)
+  - AppLovinMediationByteDanceAdapter (8.1.1.1.0):
+    - Ads-Global (= 8.1.1.1)
+    - AppLovinSDK (>= 13.0.0)
+  - AppLovinMediationChartboostAdapter (9.12.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - ChartboostSDK (= 9.12.0)
+  - AppLovinMediationFacebookAdapter (6.21.1.0):
+    - AppLovinSDK (>= 13.0.0)
+    - FBAudienceNetwork (= 6.21.1)
+  - AppLovinMediationFyberAdapter (8.4.7.0):
+    - AppLovinSDK (>= 13.0.0)
+    - Fyber_Marketplace_SDK (= 8.4.7)
+  - AppLovinMediationGoogleAdapter (13.6.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - Google-Mobile-Ads-SDK (= 13.6.0)
+  - AppLovinMediationGoogleAdManagerAdapter (13.6.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - Google-Mobile-Ads-SDK (= 13.6.0)
+  - AppLovinMediationInMobiAdapter (11.3.0.1):
+    - AppLovinSDK (>= 13.0.0)
+    - InMobiSDK (= 11.3.0)
+  - AppLovinMediationIronSourceAdapter (9.4.0.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - IronSourceSDK/Ads (= 9.4.0.0)
+  - AppLovinMediationLineAdapter (3.0.1.0):
+    - AppLovinSDK (>= 13.0.0)
+    - FiveAd (= 3.0.1)
+  - AppLovinMediationMintegralAdapter (8.1.5.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - MintegralAdSDK (= 8.1.5)
+    - MintegralAdSDK/BidSplashAd (= 8.1.5)
+  - AppLovinMediationMolocoAdapter (4.8.1.0):
+    - AppLovinSDK (>= 13.0.0)
+    - MolocoSDKiOS (= 4.8.1)
+  - AppLovinMediationOguryPresageAdapter (5.2.3.0):
+    - AppLovinSDK
+    - OgurySdk (= 5.2.3)
+  - AppLovinMediationPubMaticAdapter (5.1.1.0):
+    - AppLovinSDK (>= 13.0.0)
+    - OpenWrapSDK (= 5.1.1)
+  - AppLovinMediationUnityAdsAdapter (4.19.0.0):
+    - AppLovinSDK (>= 13.0.0)
+    - UnityAds (= 4.19.0)
+  - AppLovinMediationVungleAdapter (7.7.2.0):
+    - AppLovinSDK (>= 13.0.0)
+    - VungleAds (= 7.7.2)
+  - AppLovinSDK (13.6.3)
+  - BidMachine (3.7.1):
+    - BidMachine/Static (= 3.7.1)
+  - BidMachine/Static (3.7.1):
+    - OMSDK_Appodeal/Static (= 1.6.3)
+  - BigoADS (5.3.0)
+  - ChartboostSDK (9.12.0)
+  - FBAudienceNetwork (6.21.1)
+  - FiveAd (3.0.1)
+  - Flutter (1.0.0)
+  - Fyber_Marketplace_SDK (8.4.7)
+  - Google-Mobile-Ads-SDK (13.6.0):
+    - GoogleUserMessagingPlatform (>= 1.1)
+  - GoogleUserMessagingPlatform (3.1.0)
+  - InMobiSDK (11.3.0)
+  - IronSourceAdQualitySDK (9.8.1)
+  - IronSourceSDK/Ads (9.4.0.0)
+  - MintegralAdSDK (8.1.5):
+    - MintegralAdSDK/BannerAd (= 8.1.5)
+    - MintegralAdSDK/BidBannerAd (= 8.1.5)
+    - MintegralAdSDK/BidInterstitialVideoAd (= 8.1.5)
+    - MintegralAdSDK/BidNativeAd (= 8.1.5)
+    - MintegralAdSDK/BidNewInterstitialAd (= 8.1.5)
+    - MintegralAdSDK/BidRewardVideoAd (= 8.1.5)
+    - MintegralAdSDK/InterstitialVideoAd (= 8.1.5)
+    - MintegralAdSDK/NativeAd (= 8.1.5)
+    - MintegralAdSDK/NewInterstitialAd (= 8.1.5)
+    - MintegralAdSDK/RewardVideoAd (= 8.1.5)
+  - MintegralAdSDK/BannerAd (8.1.5):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidBannerAd (8.1.5):
+    - MintegralAdSDK/BannerAd
+    - MintegralAdSDK/BidNativeAd
+  - MintegralAdSDK/BidInterstitialVideoAd (8.1.5):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/InterstitialVideoAd
+  - MintegralAdSDK/BidNativeAd (8.1.5):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/BidNewInterstitialAd (8.1.5):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/NewInterstitialAd
+  - MintegralAdSDK/BidRewardVideoAd (8.1.5):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/RewardVideoAd
+  - MintegralAdSDK/BidSplashAd (8.1.5):
+    - MintegralAdSDK/BidNativeAd
+    - MintegralAdSDK/SplashAd
+  - MintegralAdSDK/InterstitialVideoAd (8.1.5):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (8.1.5)
+  - MintegralAdSDK/NewInterstitialAd (8.1.5):
+    - MintegralAdSDK/InterstitialVideoAd
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/RewardVideoAd (8.1.5):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/SplashAd (8.1.5):
+    - MintegralAdSDK/NativeAd
+  - MolocoSDKiOS (4.8.1)
+  - OguryAds (4.2.2):
+    - OguryCore (= 2.2.1)
+    - OMSDK_Ogury (= 1.5.7)
+  - OguryCore (2.2.1)
+  - OgurySdk (5.2.3):
+    - OguryAds (= 4.2.2)
+    - OguryCore (= 2.2.1)
+  - OMSDK_Appodeal/Static (1.6.3)
+  - OMSDK_Ogury (1.5.7)
+  - OpenWrapSDK (5.1.1)
+  - REVUP/AdManager (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaAdManager (= 1.1.0)
+  - REVUP/AdMob (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaAdMob (= 1.1.0)
+  - REVUP/ChartBoost (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaChartBoost (= 1.1.0)
+  - REVUP/Core (1.1.3)
+  - REVUP/LuckyEvent (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPLuckyEvent (= 1.1.0)
+  - REVUP/Max (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaMax (= 1.1.0)
+  - REVUP/MaxMediaAdManager (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterAdManager (= 1.1.0)
+  - REVUP/MaxMediaAdMob (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterAdMob (= 1.1.0)
+  - REVUP/MaxMediaBidMachine (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterBidMachine (= 1.1.0)
+  - REVUP/MaxMediaBigo (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterBigo (= 1.1.0)
+  - REVUP/MaxMediaChartBoost (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterChartBoost (= 1.1.0)
+  - REVUP/MaxMediaDTExchange (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterDTExchange (= 1.1.1)
+  - REVUP/MaxMediaFan (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterFan (= 1.1.0)
+  - REVUP/MaxMediaInMobi (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterInMobi (= 1.1.0)
+  - REVUP/MaxMediaIronSource (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterIronSource (= 1.1.0)
+  - REVUP/MaxMediaLine (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterLine (= 1.1.0)
+  - REVUP/MaxMediaMobVista (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterMobVista (= 1.1.0)
+  - REVUP/MaxMediaMoloco (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterMoloco (= 1.1.0)
+  - REVUP/MaxMediaOgury (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterOgury (= 1.1.0)
+  - REVUP/MaxMediaPangle (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterPangle (= 1.1.0)
+  - REVUP/MaxMediaPubMatic (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterPubMatic (= 1.1.0)
+  - REVUP/MaxMediaUnityAds (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterUnityAds (= 1.1.0)
+  - REVUP/MaxMediaVungle (1.1.3):
+    - REVUP/Max (= 1.1.3)
+    - REVUPMediaMaxAdapterVungle (= 1.1.0)
+  - REVUP/Pangle (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaPangle (= 1.1.0)
+  - REVUP/TnkPub (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaTnkPub (= 1.1.0)
+  - REVUP/Vungle (1.1.3):
+    - REVUP/Core (= 1.1.3)
+    - REVUPMediaVungle (= 1.1.0)
+  - revup_flutter_plugin (5.4.6):
+    - Flutter
+    - REVUP/Core (= 1.1.3)
+  - REVUPLuckyEvent (1.1.0)
+  - REVUPMediaAdManager (1.1.0):
+    - Google-Mobile-Ads-SDK (= 13.6.0)
+  - REVUPMediaAdMob (1.1.0):
+    - Google-Mobile-Ads-SDK (= 13.6.0)
+  - REVUPMediaChartBoost (1.1.0):
+    - ChartboostSDK (= 9.12.0)
+  - REVUPMediaMax (1.1.0):
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterAdManager (1.1.0):
+    - AppLovinMediationGoogleAdManagerAdapter (= 13.6.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterAdMob (1.1.0):
+    - AppLovinMediationGoogleAdapter (= 13.6.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterBidMachine (1.1.0):
+    - AppLovinMediationBidMachineAdapter (= 3.7.1.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterBigo (1.1.0):
+    - AppLovinMediationBigoAdsAdapter (= 5.3.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterChartBoost (1.1.0):
+    - AppLovinMediationChartboostAdapter (= 9.12.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterDTExchange (1.1.1):
+    - AppLovinMediationFyberAdapter (= 8.4.7.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterFan (1.1.0):
+    - AppLovinMediationFacebookAdapter (= 6.21.1.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterInMobi (1.1.0):
+    - AppLovinMediationInMobiAdapter (= 11.3.0.1)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterIronSource (1.1.0):
+    - AppLovinMediationIronSourceAdapter (= 9.4.0.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterLine (1.1.0):
+    - AppLovinMediationLineAdapter (= 3.0.1.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterMobVista (1.1.0):
+    - AppLovinMediationMintegralAdapter (= 8.1.5.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterMoloco (1.1.0):
+    - AppLovinMediationMolocoAdapter (= 4.8.1.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterOgury (1.1.0):
+    - AppLovinMediationOguryPresageAdapter (= 5.2.3.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterPangle (1.1.0):
+    - AppLovinMediationByteDanceAdapter (= 8.1.1.1.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterPubMatic (1.1.0):
+    - AppLovinMediationPubMaticAdapter (= 5.1.1.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterUnityAds (1.1.0):
+    - AppLovinMediationUnityAdsAdapter (= 4.19.0.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaMaxAdapterVungle (1.1.0):
+    - AppLovinMediationVungleAdapter (= 7.7.2.0)
+    - AppLovinSDK (= 13.6.3)
+  - REVUPMediaPangle (1.1.0):
+    - Ads-Global (= 8.1.1.1)
+  - REVUPMediaTnkPub (1.1.0)
+  - REVUPMediaVungle (1.1.0):
+    - VungleAds (= 7.7.2)
+  - UnityAds (4.19.0):
+    - IronSourceAdQualitySDK (< 10.0.0)
+    - UnityCoherenceLib (= 0.1.0)
+  - UnityCoherenceLib (0.1.0)
+  - VungleAds (7.7.2)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - REVUP/AdManager (= 1.1.3)
+  - REVUP/AdMob (= 1.1.3)
+  - REVUP/ChartBoost (= 1.1.3)
+  - REVUP/LuckyEvent (= 1.1.3)
+  - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaAdManager (= 1.1.3)
+  - REVUP/MaxMediaAdMob (= 1.1.3)
+  - REVUP/MaxMediaBidMachine (= 1.1.3)
+  - REVUP/MaxMediaBigo (= 1.1.3)
+  - REVUP/MaxMediaChartBoost (= 1.1.3)
+  - REVUP/MaxMediaDTExchange (= 1.1.3)
+  - REVUP/MaxMediaFan (= 1.1.3)
+  - REVUP/MaxMediaInMobi (= 1.1.3)
+  - REVUP/MaxMediaIronSource (= 1.1.3)
+  - REVUP/MaxMediaLine (= 1.1.3)
+  - REVUP/MaxMediaMobVista (= 1.1.3)
+  - REVUP/MaxMediaMoloco (= 1.1.3)
+  - REVUP/MaxMediaOgury (= 1.1.3)
+  - REVUP/MaxMediaPangle (= 1.1.3)
+  - REVUP/MaxMediaPubMatic (= 1.1.3)
+  - REVUP/MaxMediaUnityAds (= 1.1.3)
+  - REVUP/MaxMediaVungle (= 1.1.3)
+  - REVUP/Pangle (= 1.1.3)
+  - REVUP/TnkPub (= 1.1.3)
+  - REVUP/Vungle (= 1.1.3)
+  - revup_flutter_plugin (from `.symlinks/plugins/revup_flutter_plugin/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Ads-Global
+    - AppLovinMediationBidMachineAdapter
+    - AppLovinMediationBigoAdsAdapter
+    - AppLovinMediationByteDanceAdapter
+    - AppLovinMediationChartboostAdapter
+    - AppLovinMediationFacebookAdapter
+    - AppLovinMediationFyberAdapter
+    - AppLovinMediationGoogleAdapter
+    - AppLovinMediationGoogleAdManagerAdapter
+    - AppLovinMediationInMobiAdapter
+    - AppLovinMediationIronSourceAdapter
+    - AppLovinMediationLineAdapter
+    - AppLovinMediationMintegralAdapter
+    - AppLovinMediationMolocoAdapter
+    - AppLovinMediationOguryPresageAdapter
+    - AppLovinMediationPubMaticAdapter
+    - AppLovinMediationUnityAdsAdapter
+    - AppLovinMediationVungleAdapter
+    - AppLovinSDK
+    - BidMachine
+    - BigoADS
+    - ChartboostSDK
+    - FBAudienceNetwork
+    - FiveAd
+    - Fyber_Marketplace_SDK
+    - Google-Mobile-Ads-SDK
+    - GoogleUserMessagingPlatform
+    - InMobiSDK
+    - IronSourceAdQualitySDK
+    - IronSourceSDK
+    - MintegralAdSDK
+    - MolocoSDKiOS
+    - OguryAds
+    - OguryCore
+    - OgurySdk
+    - OMSDK_Appodeal
+    - OMSDK_Ogury
+    - OpenWrapSDK
+    - REVUP
+    - REVUPLuckyEvent
+    - REVUPMediaAdManager
+    - REVUPMediaAdMob
+    - REVUPMediaChartBoost
+    - REVUPMediaMax
+    - REVUPMediaMaxAdapterAdManager
+    - REVUPMediaMaxAdapterAdMob
+    - REVUPMediaMaxAdapterBidMachine
+    - REVUPMediaMaxAdapterBigo
+    - REVUPMediaMaxAdapterChartBoost
+    - REVUPMediaMaxAdapterDTExchange
+    - REVUPMediaMaxAdapterFan
+    - REVUPMediaMaxAdapterInMobi
+    - REVUPMediaMaxAdapterIronSource
+    - REVUPMediaMaxAdapterLine
+    - REVUPMediaMaxAdapterMobVista
+    - REVUPMediaMaxAdapterMoloco
+    - REVUPMediaMaxAdapterOgury
+    - REVUPMediaMaxAdapterPangle
+    - REVUPMediaMaxAdapterPubMatic
+    - REVUPMediaMaxAdapterUnityAds
+    - REVUPMediaMaxAdapterVungle
+    - REVUPMediaPangle
+    - REVUPMediaTnkPub
+    - REVUPMediaVungle
+    - UnityAds
+    - UnityCoherenceLib
+    - VungleAds
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  revup_flutter_plugin:
+    :path: ".symlinks/plugins/revup_flutter_plugin/ios"
+
+SPEC CHECKSUMS:
+  Ads-Global: f3a8c8b16fcae04034db897b09f01948dd0178e4
+  AppLovinMediationBidMachineAdapter: 255d7797b4024f1efa9bba5a3ff75d65f07936f6
+  AppLovinMediationBigoAdsAdapter: 917415e3c4b5ce2f1adabf454067f4bb50ba9d90
+  AppLovinMediationByteDanceAdapter: b3281afce883b8bf6656835e8e28699022cde4ad
+  AppLovinMediationChartboostAdapter: 8538dc5e945a97018f46104485f80ef20ed75789
+  AppLovinMediationFacebookAdapter: b962c9d82620bfb9ee53909aa9856d642e1f84db
+  AppLovinMediationFyberAdapter: 0d386d13531e8e5be5421f76572e90779cab0ae1
+  AppLovinMediationGoogleAdapter: 84b746dc2e4aa5947eb81d18ab0607d90643bb0c
+  AppLovinMediationGoogleAdManagerAdapter: 7adf87187a77a64d8c5aa5160ba0445b58d2ad63
+  AppLovinMediationInMobiAdapter: 557adbe43d92e520240382d22e47390884b3f1fc
+  AppLovinMediationIronSourceAdapter: 9acfc9a05f9025ce45670591b3dd37a24a7e7d7e
+  AppLovinMediationLineAdapter: 535ff3db8ecc9043ea8579355f417a21e27e01f3
+  AppLovinMediationMintegralAdapter: 98622994156c0aeafcf8b99366a45c81959a825f
+  AppLovinMediationMolocoAdapter: e4fb3b864265b0e1518e0162bbf76e58bd5fda9c
+  AppLovinMediationOguryPresageAdapter: c5a70e4d75c00a930e8b02da12b2a717494f3dc9
+  AppLovinMediationPubMaticAdapter: 0171c97216e286523168c14ad8c12c7328619030
+  AppLovinMediationUnityAdsAdapter: fc760137d073afc7e0629186e9f27b5f754c398e
+  AppLovinMediationVungleAdapter: 011a0800a048ec20e66f2f82aa1e2d319b0ef3a4
+  AppLovinSDK: f3da9503e8193d8c4badc1a9965d73a0779812fa
+  BidMachine: b3eca96870e834eb74a2e9dec44f99d9b5d3b7c1
+  BigoADS: 1ae2d67ffd4d2eb72c6921bdfcdd9c1f943dbecf
+  ChartboostSDK: 1a74d11450b2f5de529edc397ca434f11701232a
+  FBAudienceNetwork: 85d18a65c9e35bc426bd4664cf3ae2a1172d7b60
+  FiveAd: febdd24752d269ddc9145788f27060e816c227c8
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  Fyber_Marketplace_SDK: 1a880b530921ddf07a74982e163ab56eaf90e932
+  Google-Mobile-Ads-SDK: 6e501ace4af8d63e967bd45497c8b2b05821163d
+  GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
+  InMobiSDK: a25c208dcc6fc6d9b228f34a4643712f37923208
+  IronSourceAdQualitySDK: c024e553beebce7801ea3888eb528261a51e4df3
+  IronSourceSDK: 8112211f22915d2633a2a152d327b184fe80bf05
+  MintegralAdSDK: 9e98161b5c5afdc7f5effe4f3969dd1cf0430ed1
+  MolocoSDKiOS: 310218c351bc70e0e8fb9953d10ad884ca9f802a
+  OguryAds: 68a85214621946b5a88953ca11e3460f33597e62
+  OguryCore: 1e9302a87188e8a0d38b2faed40bd39dff471326
+  OgurySdk: 88dbd08ec1404c8f2e0825ccaefe019173f41c71
+  OMSDK_Appodeal: e76e5c30dfd3081621a8cd393c45219edc84f1f2
+  OMSDK_Ogury: 38a1f4c2237da6861909da9290dd1224ddeb3de4
+  OpenWrapSDK: e6aaa2c0265c137bca1cd754ff23c8390bcead0d
+  REVUP: d95fdcdd1bec57b386a9c15facb3ee6afe86ce67
+  revup_flutter_plugin: 19b1351b3f6bc2cd6194651faf69810a3fbe1727
+  REVUPLuckyEvent: 6b79e8cffb0223eb61dcb23f765f4ebddb5c7281
+  REVUPMediaAdManager: de642383595c267c3e8d4efa51451aace0748288
+  REVUPMediaAdMob: ba9c7a3ebf398f73ee12c7099840d19d8f3a792e
+  REVUPMediaChartBoost: ddc5be193f76874fca0379448c7220b01517e212
+  REVUPMediaMax: 8820d949f99da1357410e720b850c6d1dc27aeb5
+  REVUPMediaMaxAdapterAdManager: 774f6561f07c1299cf764def2bbedcd9356bf07a
+  REVUPMediaMaxAdapterAdMob: 1fa8a00bbbe473166f570f30626fe0a2888210d8
+  REVUPMediaMaxAdapterBidMachine: 8bc781b58c6dc6f10b5479590ef0e05e6b67c513
+  REVUPMediaMaxAdapterBigo: fd4e31dec7db190e53d1cc9517eadbb24047536d
+  REVUPMediaMaxAdapterChartBoost: 8ac6c247e71be081e8fee01893dfae85e9318b03
+  REVUPMediaMaxAdapterDTExchange: a3a70548c8b1a7e296f87c0be81520e1709146a3
+  REVUPMediaMaxAdapterFan: b57de1d4ba4c879d2e3575c4f431d22ffe56278e
+  REVUPMediaMaxAdapterInMobi: 678ada37817a096ed474bb801b0f50b74abd3b54
+  REVUPMediaMaxAdapterIronSource: b3380bd38a67c937e0b51559e9ad90154fa13953
+  REVUPMediaMaxAdapterLine: 7207366170094fc38863e37f6e4416331898dfe7
+  REVUPMediaMaxAdapterMobVista: db79aea3b715c064cc3be6a70d87bd25a9315b87
+  REVUPMediaMaxAdapterMoloco: 030f6e238eed44cde8fbf879a5fc7abac5ff196f
+  REVUPMediaMaxAdapterOgury: 7aebb174baca1456ff0415718f5e85747ceeb392
+  REVUPMediaMaxAdapterPangle: 603963df08a9cd80db38eab95e04e1abcdeeeeeb
+  REVUPMediaMaxAdapterPubMatic: 988421c53bf98bf436c31333e58a078ac8a3d3e6
+  REVUPMediaMaxAdapterUnityAds: 16f269e6e5c244aa58891bf6eb890a9ee00068ea
+  REVUPMediaMaxAdapterVungle: d107cb75f81042a0ef926bfb9e1c629acdd1eabe
+  REVUPMediaPangle: 8b975993f50d54fc8783c78455def7dd8c9be529
+  REVUPMediaTnkPub: b355ae5db8bdb00fa1fb8f719acd7fa8ece3aade
+  REVUPMediaVungle: 4f136b1e6dc05696218dfcf74c0e4a5df6e0c3b0
+  UnityAds: 40804188247edc15e4e173450a749dbb2fbc61c5
+  UnityCoherenceLib: d9be08c5b9c2880cb220c7ecd643f97ebda422b7
+  VungleAds: 03d93126f39d6056055a8b9edca701c6a3391d8b
+
+PODFILE CHECKSUM: b72eae74bbda8df08590bd9bd4993cea4c916b35
+
+COCOAPODS: 1.16.2
