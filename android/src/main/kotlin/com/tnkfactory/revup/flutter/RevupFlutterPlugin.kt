@@ -1,6 +1,7 @@
 package com.tnkfactory.revup.flutter
 
 import android.app.Activity
+import android.content.Intent
 import com.tnkfactory.revup.RevupError
 import com.tnkfactory.revup.RevupSdk
 import com.tnkfactory.revup.core.Revup
@@ -272,7 +273,16 @@ class RevupFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Revup
       if (mChildYN.isNotEmpty()) {
         builder = builder.setChildYn(mChildYN)
       }
-      builder.show(mActivity)
+      // TnkEventActivity 는 launchMode="singleTop" 이라 이미 최상단에 떠 있으면
+      // 새 인스턴스 대신 onNewIntent() 로 전달되고, SDK 가 그 Intent 의 URL 을 다시 로드한다.
+      // (복권 화면 안에서 다른 복권 이벤트를 여는 흐름)
+      // 따로 태스크 플래그를 줄 필요는 없다.
+      builder.makeUrl(mActivity) { url ->
+        val intent = Intent(mActivity, TnkEventActivity::class.java)
+        intent.putExtra(TnkEventActivity.EVENT_URL, url)
+
+        mActivity.startActivity(intent)
+      }
       result.success(true)
     } else if (call.method == "setLuckyEventUseSafeAreaWebView") {
       mLuckyEventUseSafeArea = call.argument("useSafeArea") as? Boolean ?: false

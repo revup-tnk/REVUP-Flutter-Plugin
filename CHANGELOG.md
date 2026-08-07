@@ -1,3 +1,19 @@
+## 1.0.2
+
+#### Android
+* 네이티브 SDK 를 1.0.3 으로 갱신 (revupCore / revupAndroid / revupLuckyEvent)
+* **[수정] 복권 화면에서 다른 복권 이벤트를 열 수 없던 문제**
+  * `TnkEventActivity` 는 `launchMode="singleTop"` 인데 네이티브 SDK 가
+    `onNewIntent()` 를 처리하지 않아, 복권 화면이 이미 떠 있는 상태에서
+    `showLuckyEvent` 를 다시 호출하면 기존 인스턴스로 흡수되고 화면이
+    이전 이벤트 그대로 남았다.
+  * SDK 1.0.3 에서 `onNewIntent()` 가 새 URL 을 다시 로드하도록 수정됐다.
+  * 이에 맞춰 `showLuckyEvent` 가 `TnkEventActivity` 를 두 번 실행하던 중복
+    호출(`TnkEventBuilder.show()` + 직접 `startActivity()`)을 제거했다.
+
+> 이 수정은 네이티브 SDK 1.0.3 이 필요하다. 매체가 revupCore/revupAndroid/
+> revupLuckyEvent 를 직접 선언해 하위 버전으로 고정하고 있다면 함께 올려야 한다.
+
 ## 1.0.1
 
 #### Android
