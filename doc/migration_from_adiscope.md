@@ -118,9 +118,9 @@ target 'Runner' do
   # pod 'Adiscope/LuckyEvent', '5.4.0'
 
   # 변경 후 — 필요한 subspec 만 추가
-  pod 'REVUP/Core', '1.1.3'
-  pod 'REVUP/LuckyEvent', '1.1.3'
-  pod 'REVUP/AdMob', '1.1.3'
+  pod 'REVUP/Core', '1.1.5'
+  pod 'REVUP/LuckyEvent', '1.1.5'
+  pod 'REVUP/AdMob', '1.1.5'
   # ...
 end
 ```
@@ -160,7 +160,9 @@ end
 
 | 버전 | podspec 자기정합성 | 최소 배포 타겟 |
 | --- | --- | --- |
-| **1.1.3** | ✅ OK | iOS 13.0 |
+| **1.1.5** | ✅ OK | iOS 13.0 |
+| 1.1.4 | ✅ OK | iOS 13.0 |
+| 1.1.3 | ✅ OK | iOS 13.0 |
 | 1.1.2 | ❌ NG | iOS 13.0 |
 | 1.1.1 | ❌ NG | iOS 13.0 |
 | 1.1.0 | ✅ OK | iOS 15.0 |

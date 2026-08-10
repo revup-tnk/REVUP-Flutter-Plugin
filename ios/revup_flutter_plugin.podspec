@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'revup_flutter_plugin'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'We provide a plugin so that you can integrate revup while developing with Flutter.'
   s.description      = <<-DESC
 Revup SDK for Flutter plugin project.
@@ -20,7 +20,7 @@ Revup SDK for Flutter plugin project.
   # 플러그인은 코어만 의존한다. 미디에이션 어댑터(REVUP/AdMob, REVUP/Max 등)와
   # REVUP/LuckyEvent는 퍼블리셔가 필요한 것만 자신의 Podfile에 추가한다.
   # (umbrella인 'REVUP'를 그대로 쓰면 default_subspecs로 모든 광고 네트워크 SDK가 딸려온다)
-  s.dependency 'REVUP/Core', '1.1.3'
+  s.dependency 'REVUP/Core', '1.1.5'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }

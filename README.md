@@ -1,7 +1,7 @@
 # Revup Flutter Plugin
 [![pub package](https://img.shields.io/badge/Flutter-1.0.0-blue)](./CHANGELOG.md)
 [![Android](https://img.shields.io/badge/Android-1.0.2-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
-[![iOS](https://img.shields.io/badge/iOS-1.1.3-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
+[![iOS](https://img.shields.io/badge/iOS-1.1.5-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
 
 - Android Target API Level : 31+
 - Android Minimum API Level : 21
@@ -167,32 +167,32 @@ target 'Runner' do
 
   # REVUP 은 단일 pod + subspec 구조다. 필요한 subspec 만 골라 추가한다.
   # (umbrella 인 pod 'REVUP' 를 쓰면 default_subspecs 로 모든 광고 네트워크가 딸려온다)
-  pod 'REVUP/Core', '1.1.3'
-  pod 'REVUP/LuckyEvent', '1.1.3'
-  pod 'REVUP/AdManager', '1.1.3'
-  pod 'REVUP/AdMob', '1.1.3'
-  pod 'REVUP/ChartBoost', '1.1.3'
-  pod 'REVUP/Pangle', '1.1.3'
-  pod 'REVUP/Vungle', '1.1.3'
-  pod 'REVUP/TnkPub', '1.1.3'
-  pod 'REVUP/Max', '1.1.3'
-  pod 'REVUP/MaxMediaAdManager', '1.1.3'
-  pod 'REVUP/MaxMediaAdMob', '1.1.3'
-  pod 'REVUP/MaxMediaBidMachine', '1.1.3'
-  pod 'REVUP/MaxMediaBigo', '1.1.3'
-  pod 'REVUP/MaxMediaChartBoost', '1.1.3'
-  pod 'REVUP/MaxMediaDTExchange', '1.1.3'
-  pod 'REVUP/MaxMediaFan', '1.1.3'
-  pod 'REVUP/MaxMediaInMobi', '1.1.3'
-  pod 'REVUP/MaxMediaIronSource', '1.1.3'
-  pod 'REVUP/MaxMediaLine', '1.1.3'
-  pod 'REVUP/MaxMediaMobVista', '1.1.3'
-  pod 'REVUP/MaxMediaMoloco', '1.1.3'
-  pod 'REVUP/MaxMediaOgury', '1.1.3'
-  pod 'REVUP/MaxMediaPangle', '1.1.3'
-  pod 'REVUP/MaxMediaPubMatic', '1.1.3'
-  pod 'REVUP/MaxMediaUnityAds', '1.1.3'
-  pod 'REVUP/MaxMediaVungle', '1.1.3'
+  pod 'REVUP/Core', '1.1.5'
+  pod 'REVUP/LuckyEvent', '1.1.5'
+  pod 'REVUP/AdManager', '1.1.5'
+  pod 'REVUP/AdMob', '1.1.5'
+  pod 'REVUP/ChartBoost', '1.1.5'
+  pod 'REVUP/Pangle', '1.1.5'
+  pod 'REVUP/Vungle', '1.1.5'
+  pod 'REVUP/TnkPub', '1.1.5'
+  pod 'REVUP/Max', '1.1.5'
+  pod 'REVUP/MaxMediaAdManager', '1.1.5'
+  pod 'REVUP/MaxMediaAdMob', '1.1.5'
+  pod 'REVUP/MaxMediaBidMachine', '1.1.5'
+  pod 'REVUP/MaxMediaBigo', '1.1.5'
+  pod 'REVUP/MaxMediaChartBoost', '1.1.5'
+  pod 'REVUP/MaxMediaDTExchange', '1.1.5'
+  pod 'REVUP/MaxMediaFan', '1.1.5'
+  pod 'REVUP/MaxMediaInMobi', '1.1.5'
+  pod 'REVUP/MaxMediaIronSource', '1.1.5'
+  pod 'REVUP/MaxMediaLine', '1.1.5'
+  pod 'REVUP/MaxMediaMobVista', '1.1.5'
+  pod 'REVUP/MaxMediaMoloco', '1.1.5'
+  pod 'REVUP/MaxMediaOgury', '1.1.5'
+  pod 'REVUP/MaxMediaPangle', '1.1.5'
+  pod 'REVUP/MaxMediaPubMatic', '1.1.5'
+  pod 'REVUP/MaxMediaUnityAds', '1.1.5'
+  pod 'REVUP/MaxMediaVungle', '1.1.5'
 end
 ```
 - 프로젝트 파일 내에 {projectroot}/ios/Podfile 파일에 `pod` 추가

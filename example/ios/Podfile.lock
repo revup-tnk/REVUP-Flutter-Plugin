@@ -126,85 +126,85 @@ PODS:
   - OMSDK_Appodeal/Static (1.6.3)
   - OMSDK_Ogury (1.5.7)
   - OpenWrapSDK (5.1.1)
-  - REVUP/AdManager (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/AdManager (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaAdManager (= 1.1.0)
-  - REVUP/AdMob (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/AdMob (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaAdMob (= 1.1.0)
-  - REVUP/ChartBoost (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/ChartBoost (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaChartBoost (= 1.1.0)
-  - REVUP/Core (1.1.3)
-  - REVUP/LuckyEvent (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/Core (1.1.5)
+  - REVUP/LuckyEvent (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPLuckyEvent (= 1.1.0)
-  - REVUP/Max (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/Max (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaMax (= 1.1.0)
-  - REVUP/MaxMediaAdManager (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaAdManager (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterAdManager (= 1.1.0)
-  - REVUP/MaxMediaAdMob (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaAdMob (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterAdMob (= 1.1.0)
-  - REVUP/MaxMediaBidMachine (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaBidMachine (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterBidMachine (= 1.1.0)
-  - REVUP/MaxMediaBigo (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaBigo (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterBigo (= 1.1.0)
-  - REVUP/MaxMediaChartBoost (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaChartBoost (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterChartBoost (= 1.1.0)
-  - REVUP/MaxMediaDTExchange (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaDTExchange (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterDTExchange (= 1.1.1)
-  - REVUP/MaxMediaFan (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaFan (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterFan (= 1.1.0)
-  - REVUP/MaxMediaInMobi (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaInMobi (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterInMobi (= 1.1.0)
-  - REVUP/MaxMediaIronSource (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaIronSource (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterIronSource (= 1.1.0)
-  - REVUP/MaxMediaLine (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaLine (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterLine (= 1.1.0)
-  - REVUP/MaxMediaMobVista (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaMobVista (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterMobVista (= 1.1.0)
-  - REVUP/MaxMediaMoloco (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaMoloco (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterMoloco (= 1.1.0)
-  - REVUP/MaxMediaOgury (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaOgury (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterOgury (= 1.1.0)
-  - REVUP/MaxMediaPangle (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaPangle (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterPangle (= 1.1.0)
-  - REVUP/MaxMediaPubMatic (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaPubMatic (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterPubMatic (= 1.1.0)
-  - REVUP/MaxMediaUnityAds (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaUnityAds (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterUnityAds (= 1.1.0)
-  - REVUP/MaxMediaVungle (1.1.3):
-    - REVUP/Max (= 1.1.3)
+  - REVUP/MaxMediaVungle (1.1.5):
+    - REVUP/Max (= 1.1.5)
     - REVUPMediaMaxAdapterVungle (= 1.1.0)
-  - REVUP/Pangle (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/Pangle (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaPangle (= 1.1.0)
-  - REVUP/TnkPub (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/TnkPub (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaTnkPub (= 1.1.0)
-  - REVUP/Vungle (1.1.3):
-    - REVUP/Core (= 1.1.3)
+  - REVUP/Vungle (1.1.5):
+    - REVUP/Core (= 1.1.5)
     - REVUPMediaVungle (= 1.1.0)
-  - revup_flutter_plugin (5.4.6):
+  - revup_flutter_plugin (1.0.2):
     - Flutter
-    - REVUP/Core (= 1.1.3)
+    - REVUP/Core (= 1.1.5)
   - REVUPLuckyEvent (1.1.0)
   - REVUPMediaAdManager (1.1.0):
     - Google-Mobile-Ads-SDK (= 13.6.0)
@@ -278,31 +278,31 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - REVUP/AdManager (= 1.1.3)
-  - REVUP/AdMob (= 1.1.3)
-  - REVUP/ChartBoost (= 1.1.3)
-  - REVUP/LuckyEvent (= 1.1.3)
-  - REVUP/Max (= 1.1.3)
-  - REVUP/MaxMediaAdManager (= 1.1.3)
-  - REVUP/MaxMediaAdMob (= 1.1.3)
-  - REVUP/MaxMediaBidMachine (= 1.1.3)
-  - REVUP/MaxMediaBigo (= 1.1.3)
-  - REVUP/MaxMediaChartBoost (= 1.1.3)
-  - REVUP/MaxMediaDTExchange (= 1.1.3)
-  - REVUP/MaxMediaFan (= 1.1.3)
-  - REVUP/MaxMediaInMobi (= 1.1.3)
-  - REVUP/MaxMediaIronSource (= 1.1.3)
-  - REVUP/MaxMediaLine (= 1.1.3)
-  - REVUP/MaxMediaMobVista (= 1.1.3)
-  - REVUP/MaxMediaMoloco (= 1.1.3)
-  - REVUP/MaxMediaOgury (= 1.1.3)
-  - REVUP/MaxMediaPangle (= 1.1.3)
-  - REVUP/MaxMediaPubMatic (= 1.1.3)
-  - REVUP/MaxMediaUnityAds (= 1.1.3)
-  - REVUP/MaxMediaVungle (= 1.1.3)
-  - REVUP/Pangle (= 1.1.3)
-  - REVUP/TnkPub (= 1.1.3)
-  - REVUP/Vungle (= 1.1.3)
+  - REVUP/AdManager (= 1.1.5)
+  - REVUP/AdMob (= 1.1.5)
+  - REVUP/ChartBoost (= 1.1.5)
+  - REVUP/LuckyEvent (= 1.1.5)
+  - REVUP/Max (= 1.1.5)
+  - REVUP/MaxMediaAdManager (= 1.1.5)
+  - REVUP/MaxMediaAdMob (= 1.1.5)
+  - REVUP/MaxMediaBidMachine (= 1.1.5)
+  - REVUP/MaxMediaBigo (= 1.1.5)
+  - REVUP/MaxMediaChartBoost (= 1.1.5)
+  - REVUP/MaxMediaDTExchange (= 1.1.5)
+  - REVUP/MaxMediaFan (= 1.1.5)
+  - REVUP/MaxMediaInMobi (= 1.1.5)
+  - REVUP/MaxMediaIronSource (= 1.1.5)
+  - REVUP/MaxMediaLine (= 1.1.5)
+  - REVUP/MaxMediaMobVista (= 1.1.5)
+  - REVUP/MaxMediaMoloco (= 1.1.5)
+  - REVUP/MaxMediaOgury (= 1.1.5)
+  - REVUP/MaxMediaPangle (= 1.1.5)
+  - REVUP/MaxMediaPubMatic (= 1.1.5)
+  - REVUP/MaxMediaUnityAds (= 1.1.5)
+  - REVUP/MaxMediaVungle (= 1.1.5)
+  - REVUP/Pangle (= 1.1.5)
+  - REVUP/TnkPub (= 1.1.5)
+  - REVUP/Vungle (= 1.1.5)
   - revup_flutter_plugin (from `.symlinks/plugins/revup_flutter_plugin/ios`)
 
 SPEC REPOS:
@@ -421,8 +421,8 @@ SPEC CHECKSUMS:
   OMSDK_Appodeal: e76e5c30dfd3081621a8cd393c45219edc84f1f2
   OMSDK_Ogury: 38a1f4c2237da6861909da9290dd1224ddeb3de4
   OpenWrapSDK: e6aaa2c0265c137bca1cd754ff23c8390bcead0d
-  REVUP: d95fdcdd1bec57b386a9c15facb3ee6afe86ce67
-  revup_flutter_plugin: 19b1351b3f6bc2cd6194651faf69810a3fbe1727
+  REVUP: 7bbf3d816a56dedef42bcdfb4af8e3261a35c047
+  revup_flutter_plugin: 59041d2a4630dbe607895cd23ed6b584b027ba12
   REVUPLuckyEvent: 6b79e8cffb0223eb61dcb23f765f4ebddb5c7281
   REVUPMediaAdManager: de642383595c267c3e8d4efa51451aace0748288
   REVUPMediaAdMob: ba9c7a3ebf398f73ee12c7099840d19d8f3a792e
@@ -452,6 +452,6 @@ SPEC CHECKSUMS:
   UnityCoherenceLib: d9be08c5b9c2880cb220c7ecd643f97ebda422b7
   VungleAds: 03d93126f39d6056055a8b9edca701c6a3391d8b
 
-PODFILE CHECKSUM: b72eae74bbda8df08590bd9bd4993cea4c916b35
+PODFILE CHECKSUM: 32166d91cfc8ec45666c9b6ef2a5080fb2539f79
 
 COCOAPODS: 1.16.2
