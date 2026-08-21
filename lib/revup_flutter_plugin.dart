@@ -1,5 +1,8 @@
 import 'package:flutter/services.dart';
 import 'revup_flutter_plugin_platform_interface.dart';
+import 'revup_lucky_event_theme.dart';
+
+export 'revup_lucky_event_theme.dart';
 
 class RevupFlutterPlugin {
   /// Initialize adisocpe with [mediaid, mediasecret, callbackTag, childYN].
@@ -99,6 +102,11 @@ class RevupFlutterPlugin {
     return RevupFlutterPluginPlatform.instance.setLuckyEventUseSafeAreaWebView(useSafeArea);
   }
 
+  /// Set Lucky Event of edge swipe gesture. (iOS only)
+  Future<bool?> setLuckyEventEdgeGesture(bool isEdgeGesture) {
+    return RevupFlutterPluginPlatform.instance.setLuckyEventEdgeGesture(isEdgeGesture);
+  }
+
   /// Set Lucky Event of HashMark.
   Future<bool?> setLuckyEventHashMark(String hashMark) {
     return RevupFlutterPluginPlatform.instance.setLuckyEventHashMark(hashMark);
@@ -112,6 +120,22 @@ class RevupFlutterPlugin {
   /// Set Lucky Event of ExtraParam.
   Future<bool?> setLuckyEventExtraParam(String key, String value) {
     return RevupFlutterPluginPlatform.instance.setLuckyEventExtraParam(key, value);
+  }
+
+  /// 복권 화면의 테마를 설정합니다. (네이티브 영역만 적용 - 웹 콘텐츠는 웹이 정한 대로 보입니다)
+  ///
+  /// 이후에 여는 화면부터 적용되므로 [showLuckyEvent] 보다 먼저 호출해야 합니다.
+  /// 이미 떠 있는 화면에는 반영되지 않습니다.
+  ///
+  /// 설정하지 않으면 [RevupLuckyEventTheme.system]으로 동작합니다.
+  ///
+  /// ```dart
+  /// // 단말 설정과 무관하게 항상 라이트로 고정하는 경우
+  /// await revup.setLuckyEventTheme(RevupLuckyEventTheme.light);
+  /// await revup.showLuckyEvent();
+  /// ```
+  Future<bool?> setLuckyEventTheme(RevupLuckyEventTheme theme) {
+    return RevupFlutterPluginPlatform.instance.setLuckyEventTheme(theme);
   }
 
   /// Show With Load rewardedVideo of [unitId] value.

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'revup_flutter_plugin_platform_interface.dart';
+import 'revup_lucky_event_theme.dart';
 
 /// An implementation of [RevupFlutterPluginPlatform] that uses method channels.
 class MethodChannelRevupFlutterPlugin extends RevupFlutterPluginPlatform {
@@ -151,6 +152,13 @@ class MethodChannelRevupFlutterPlugin extends RevupFlutterPluginPlatform {
   }
 
   @override
+  Future<bool?> setLuckyEventEdgeGesture(bool isEdgeGesture) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventEdgeGesture', <String, dynamic>{"isEdgeGesture": isEdgeGesture});
+    return result;
+  }
+
+  @override
   Future<bool?> setLuckyEventHashMark(String hashMark) async {
     final result = await methodChannel
         .invokeMethod<bool>('setLuckyEventHashMark', <String, dynamic>{"hashMark": hashMark});
@@ -171,6 +179,13 @@ class MethodChannelRevupFlutterPlugin extends RevupFlutterPluginPlatform {
       "key": key,
       "value": value
     });
+    return result;
+  }
+
+  @override
+  Future<bool?> setLuckyEventTheme(RevupLuckyEventTheme theme) async {
+    final result = await methodChannel
+        .invokeMethod<bool>('setLuckyEventTheme', <String, dynamic>{"theme": theme.value});
     return result;
   }
 

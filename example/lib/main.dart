@@ -323,6 +323,17 @@ class _MyAppState extends State<MyApp> {
     pushLog("setLuckyEventAppId => $result / $useSafeArea");
   }
 
+  Future<void> setLuckyEventEdgeGesture(bool isEdgeGesture) async {
+    bool result = false;
+    try {
+      result = await _revupFlutterPlugin.setLuckyEventEdgeGesture(isEdgeGesture) ?? false;
+    } on PlatformException {
+      result = false;
+    }
+    if (!mounted) return;
+    pushLog("setLuckyEventEdgeGesture => $result / $isEdgeGesture");
+  }
+
   Future<void> setLuckyEventHashMark(String hashMark) async {
     bool result = false;
     try {
@@ -354,6 +365,17 @@ class _MyAppState extends State<MyApp> {
     }
     if (!mounted) return;
     pushLog("setLuckyEventAppId => $result / $key / $value");
+  }
+
+  Future<void> setLuckyEventTheme(RevupLuckyEventTheme theme) async {
+    bool result = false;
+    try {
+      result = await _revupFlutterPlugin.setLuckyEventTheme(theme) ?? false;
+    } on PlatformException {
+      result = false;
+    }
+    if (!mounted) return;
+    pushLog("setLuckyEventTheme => $result / ${theme.value}");
   }
 
   Future<void> setRewardedCheckParam(String param) async {
@@ -1133,6 +1155,69 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () { setLuckyEventAppId(_luckyEventAppIdController.text, _luckyEventPubIdController.text); },
                             child: Text("Set Lucky Event")
                         ),
+                      ),
+                      SizedBox( height: 5,),
+                      Row(
+                        children: [
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                onPressed: () { setLuckyEventEdgeGesture(true); },
+                                child: Text("Edge Gesture On (iOS)")
+                              ),
+                            ),
+                          ),
+                          SizedBox( width: 5,),
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                onPressed: () { setLuckyEventEdgeGesture(false); },
+                                child: Text("Edge Gesture Off (iOS)")
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox( height: 5,),
+                      Row(
+                        children: [
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                onPressed: () { setLuckyEventTheme(RevupLuckyEventTheme.light); },
+                                child: Text("Theme Light")
+                              ),
+                            ),
+                          ),
+                          SizedBox( width: 5,),
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                onPressed: () { setLuckyEventTheme(RevupLuckyEventTheme.dark); },
+                                child: Text("Theme Dark")
+                              ),
+                            ),
+                          ),
+                          SizedBox( width: 5,),
+                          Flexible(
+                            flex: 1,
+                            child: Container(
+                              width: double.infinity,
+                              child: OutlinedButton(
+                                onPressed: () { setLuckyEventTheme(RevupLuckyEventTheme.system); },
+                                child: Text("Theme System")
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                       SizedBox( height: 5,),
                       Container(

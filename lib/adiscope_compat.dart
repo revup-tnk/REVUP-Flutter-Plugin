@@ -24,6 +24,8 @@ import 'package:flutter/services.dart';
 
 import 'revup_flutter_plugin.dart';
 
+export 'revup_lucky_event_theme.dart';
+
 /// [RevupFlutterPlugin]의 Adiscope 호환 이름.
 class AdiscopeFlutterPlugin {
   final RevupFlutterPlugin _plugin = RevupFlutterPlugin();
@@ -128,6 +130,11 @@ class AdiscopeFlutterPlugin {
   /// Set Lucky Event of ExtraParam.
   Future<bool?> setLuckyEventExtraParam(String key, String value) {
     return _plugin.setLuckyEventExtraParam(key, value);
+  }
+
+  /// 복권 화면 테마 설정. (Revup 신규 API)
+  Future<bool?> setLuckyEventTheme(RevupLuckyEventTheme theme) {
+    return _plugin.setLuckyEventTheme(theme);
   }
 
   /// Show With Load rewardedVideo of [unitId] value.

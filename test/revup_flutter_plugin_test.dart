@@ -144,6 +144,11 @@ class MockRevupFlutterPluginPlatform
   }
 
   @override
+  Future<bool?> setLuckyEventEdgeGesture(bool isEdgeGesture) {
+    throw UnimplementedError();
+  }
+
+  @override
   Future<bool?> setLuckyEventHashMark(String hashMark) {
     throw UnimplementedError();
   }
@@ -155,6 +160,11 @@ class MockRevupFlutterPluginPlatform
 
   @override
   Future<bool?> setLuckyEventExtraParam(String key, String value) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool?> setLuckyEventTheme(RevupLuckyEventTheme theme) {
     throw UnimplementedError();
   }
 
