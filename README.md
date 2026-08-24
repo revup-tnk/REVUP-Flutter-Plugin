@@ -1,7 +1,7 @@
 # Revup Flutter Plugin
-[![pub package](https://img.shields.io/badge/Flutter-1.0.0-blue)](./CHANGELOG.md)
-[![Android](https://img.shields.io/badge/Android-1.0.2-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
-[![iOS](https://img.shields.io/badge/iOS-1.1.5-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
+[![pub package](https://img.shields.io/badge/Flutter-1.0.4-blue)](./CHANGELOG.md)
+[![Android](https://img.shields.io/badge/Android-1.0.6-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
+[![iOS](https://img.shields.io/badge/iOS-1.1.9-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
 
 - Android Target API Level : 31+
 - Android Minimum API Level : 21
@@ -47,6 +47,7 @@
 - [RevupFlutterPlugin 생성](#2-revupflutterplugin-생성)
 - [Initialize](#3-initialize)
 - [사용자 정보 설정](#4-사용자-정보-설정)
+- [Lucky Event](#5-lucky-event)
 - [RewardedVideo](#6-rewardedvideo)
 - [Interstitial](#7-interstitial)
 - [RewardedInterstitial](#8-rewardedinterstitial)
@@ -129,7 +130,7 @@ android {
 }
 dependencies {
     // BOM 으로 연동하면 어댑터 버전을 개별로 명시할 필요가 없다
-    implementation platform('com.tnkfactory.revup:revup-bom:1.0.2')
+    implementation platform('com.tnkfactory.revup:revup-bom:1.0.6')
 
     implementation 'com.tnkfactory.revup:revupCore'
     implementation 'com.tnkfactory.revup:revupAndroid'
@@ -167,32 +168,32 @@ target 'Runner' do
 
   # REVUP 은 단일 pod + subspec 구조다. 필요한 subspec 만 골라 추가한다.
   # (umbrella 인 pod 'REVUP' 를 쓰면 default_subspecs 로 모든 광고 네트워크가 딸려온다)
-  pod 'REVUP/Core', '1.1.5'
-  pod 'REVUP/LuckyEvent', '1.1.5'
-  pod 'REVUP/AdManager', '1.1.5'
-  pod 'REVUP/AdMob', '1.1.5'
-  pod 'REVUP/ChartBoost', '1.1.5'
-  pod 'REVUP/Pangle', '1.1.5'
-  pod 'REVUP/Vungle', '1.1.5'
-  pod 'REVUP/TnkPub', '1.1.5'
-  pod 'REVUP/Max', '1.1.5'
-  pod 'REVUP/MaxMediaAdManager', '1.1.5'
-  pod 'REVUP/MaxMediaAdMob', '1.1.5'
-  pod 'REVUP/MaxMediaBidMachine', '1.1.5'
-  pod 'REVUP/MaxMediaBigo', '1.1.5'
-  pod 'REVUP/MaxMediaChartBoost', '1.1.5'
-  pod 'REVUP/MaxMediaDTExchange', '1.1.5'
-  pod 'REVUP/MaxMediaFan', '1.1.5'
-  pod 'REVUP/MaxMediaInMobi', '1.1.5'
-  pod 'REVUP/MaxMediaIronSource', '1.1.5'
-  pod 'REVUP/MaxMediaLine', '1.1.5'
-  pod 'REVUP/MaxMediaMobVista', '1.1.5'
-  pod 'REVUP/MaxMediaMoloco', '1.1.5'
-  pod 'REVUP/MaxMediaOgury', '1.1.5'
-  pod 'REVUP/MaxMediaPangle', '1.1.5'
-  pod 'REVUP/MaxMediaPubMatic', '1.1.5'
-  pod 'REVUP/MaxMediaUnityAds', '1.1.5'
-  pod 'REVUP/MaxMediaVungle', '1.1.5'
+  pod 'REVUP/Core', '1.1.9'
+  pod 'REVUP/LuckyEvent', '1.1.9'
+  pod 'REVUP/AdManager', '1.1.9'
+  pod 'REVUP/AdMob', '1.1.9'
+  pod 'REVUP/ChartBoost', '1.1.9'
+  pod 'REVUP/Pangle', '1.1.9'
+  pod 'REVUP/Vungle', '1.1.9'
+  pod 'REVUP/TnkPub', '1.1.9'
+  pod 'REVUP/Max', '1.1.9'
+  pod 'REVUP/MaxMediaAdManager', '1.1.9'
+  pod 'REVUP/MaxMediaAdMob', '1.1.9'
+  pod 'REVUP/MaxMediaBidMachine', '1.1.9'
+  pod 'REVUP/MaxMediaBigo', '1.1.9'
+  pod 'REVUP/MaxMediaChartBoost', '1.1.9'
+  pod 'REVUP/MaxMediaDTExchange', '1.1.9'
+  pod 'REVUP/MaxMediaFan', '1.1.9'
+  pod 'REVUP/MaxMediaInMobi', '1.1.9'
+  pod 'REVUP/MaxMediaIronSource', '1.1.9'
+  pod 'REVUP/MaxMediaLine', '1.1.9'
+  pod 'REVUP/MaxMediaMobVista', '1.1.9'
+  pod 'REVUP/MaxMediaMoloco', '1.1.9'
+  pod 'REVUP/MaxMediaOgury', '1.1.9'
+  pod 'REVUP/MaxMediaPangle', '1.1.9'
+  pod 'REVUP/MaxMediaPubMatic', '1.1.9'
+  pod 'REVUP/MaxMediaUnityAds', '1.1.9'
+  pod 'REVUP/MaxMediaVungle', '1.1.9'
 end
 ```
 - 프로젝트 파일 내에 {projectroot}/ios/Podfile 파일에 `pod` 추가
@@ -308,6 +309,78 @@ Future<void> setUserId() async {
 ```
 - `RewardedVideo`, `RewardedInterstitial`를 사용하기 위해 ${\color{red}필수}$ 설정
 - 64자까지 설정 가능 
+<br/><br/><br/>
+
+### 5. Lucky Event
+복권 등 서드파티 이벤트 웹 페이지를 노출합니다. 이벤트 아이디와 키값은 매체 영업팀을 통해 발급받습니다.
+
+Android 는 `revupLuckyEvent` 모듈, iOS 는 `REVUP/LuckyEvent` subspec 이 연동되어 있어야 합니다.
+
+#### A. Settings
+```dart
+Future<void> setLuckyEventAppId() async {
+    var eventId = "";       // 이벤트 식별 키값 (관리자를 통해 발급)
+    var pubId = "";         // 이벤트 매체 식별 키값 (관리자를 통해 발급)
+    bool result = await _revupFlutterPlugin.setLuckyEventAppId(eventId, pubId) ?? false;
+}
+```
+- **사용자 정보 설정(setUserId)** 완료 후 호출
+<br/>
+
+#### B. Theme
+```dart
+Future<void> setLuckyEventTheme() async {
+    // light : 단말 설정과 무관하게 항상 라이트
+    // dark  : 단말 설정과 무관하게 항상 다크
+    // system: 단말의 다크모드 설정을 따름 (기본값)
+    bool result = await _revupFlutterPlugin
+        .setLuckyEventTheme(RevupLuckyEventTheme.system) ?? false;
+}
+```
+- 적용 범위는 SDK 가 그리는 ${\color{red}네이티브\ 영역}$ 입니다 — 화면 배경, 상태바·내비게이션바 아이콘 대비, SDK 안내 팝업
+- 이벤트 웹 페이지 자체는 웹에서 정한 대로 표시됩니다
+- **Show 호출 전** 에 설정해야 하며, 이미 떠 있는 화면에는 반영되지 않음
+- 기본값이 `system` 이므로, 별도 설정이 없으면 다크모드 단말에서 화면이 다크로 표시됨
+- Android `1.0.6` / iOS `1.1.9` 이상 필요
+<br/>
+
+#### C. Show
+```dart
+Future<void> showLuckyEvent() async {
+    bool result = await _revupFlutterPlugin.showLuckyEvent() ?? false;
+}
+```
+<br/>
+
+#### D. 부가 옵션
+```dart
+// 이벤트 URL 뒤에 붙일 해시마크 (#page-1 등)
+await _revupFlutterPlugin.setLuckyEventHashMark("page-1");
+
+// 이벤트 URL 에 추가할 커스텀 쿼리 파라미터
+await _revupFlutterPlugin.setLuckyEventExtraParam("key", "value");
+
+// 이벤트 base URL 변경 (테스트 서버 연동 등, 협의 후 사용)
+await _revupFlutterPlugin.setLuckyEventBaseUrl("https://...");
+
+// [iOS 전용] 웹뷰에 safe area 적용
+await _revupFlutterPlugin.setLuckyEventUseSafeAreaWebView(true);
+
+// [iOS 전용] 웹뷰 edge swipe 제스처로 뒤로가기
+await _revupFlutterPlugin.setLuckyEventEdgeGesture(true);
+```
+- iOS 전용 옵션은 Android 에서 호출해도 동작하지 않고 `false` 를 반환합니다
+<br/>
+
+#### E. Callback
+```dart
+RevupListener.setupLuckyEventListener(
+    luckyEventWebViewNavigated: (url) {
+        // 이벤트 웹뷰에서 발생한 scheme URL 수신
+    },
+);
+```
+- 이벤트 웹뷰에서 발생하는 Scheme URL 을 전달받아 매체가 직접 처리할 때 사용
 <br/><br/><br/>
 
 ### 6. RewardedVideo
