@@ -7,7 +7,7 @@
   * 네이티브 SDK 의 `RevupLuckyEvent.setEventTheme()` 로 전달된다
 
 #### iOS
-* 네이티브 SDK 를 `REVUP 1.1.6` 으로 갱신
+* 네이티브 SDK 를 `REVUP 1.1.9` 로 갱신
 * **[추가] 복권 화면 테마 옵션** — Android 와 동일한 `setLuckyEventTheme` 사용
   * 네이티브 SDK 의 `setLuckyEventUserInterfaceStyle:` 로 전달된다
   * `system` 은 `UIUserInterfaceStyleUnspecified` 에 대응한다

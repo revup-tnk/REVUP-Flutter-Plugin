@@ -76,7 +76,7 @@ flutter {
 
 dependencies {
     // bom으로 연동 시 어댑터별 버전을 명시하지 않아도 코어 모듈 버전으로 매핑된 버전의 어댑터가 자동으로 연동됨
-    implementation platform("com.tnkfactory.revup:revup-bom:1.0.2")
+    implementation platform("com.tnkfactory.revup:revup-bom:1.0.6")
 
     implementation 'com.tnkfactory.revup:revupCore'
     implementation 'com.tnkfactory.revup:revupAndroid'
