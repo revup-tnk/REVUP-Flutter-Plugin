@@ -15,6 +15,8 @@ import com.tnkfactory.revup.reward.RewardedVideoAd
 import com.tnkfactory.revup.reward.RewardedVideoAdListener
 import com.tnkfactory.revup.rewardedinterstitial.RewardedInterstitialAd
 import com.tnkfactory.revup.rewardedinterstitial.RewardedInterstitialAdShowListener
+import com.tnkfactory.revup.luckyevent.LuckyEventTheme
+import com.tnkfactory.revup.luckyevent.RevupLuckyEvent
 import com.tnkfactory.revup.luckyevent.tnk.TnkEventActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -287,6 +289,9 @@ class RevupFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Revup
     } else if (call.method == "setLuckyEventUseSafeAreaWebView") {
       mLuckyEventUseSafeArea = call.argument("useSafeArea") as? Boolean ?: false
       result.success(true)
+    } else if (call.method == "setLuckyEventEdgeGesture") {
+      // iOS 전용 옵션 (웹뷰 edge swipe 제스처)
+      result.success(false)
     } else if (call.method == "setLuckyEventHashMark") {
       mLuckyEventHashMark = call.argument("hashMark") as? String ?: ""
       result.success(true)
@@ -298,6 +303,16 @@ class RevupFlutterPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, Revup
       val v = call.argument("value") as? String ?: ""
       mLuckyEventExtraParams.put(k, v)
       result.success(true)
+    } else if (call.method == "setLuckyEventTheme") {
+      // 알 수 없는 값이면 설정을 바꾸지 않고 false 를 돌려준다.
+      // (조용히 기본값으로 되돌리면 매체가 오타를 알아채지 못한다)
+      val theme = LuckyEventTheme.from(call.argument("theme") as? String)
+      if (theme != null) {
+        RevupLuckyEvent.setEventTheme(theme)
+        result.success(true)
+      } else {
+        result.success(false)
+      }
     } else {
       result.notImplemented()
     }

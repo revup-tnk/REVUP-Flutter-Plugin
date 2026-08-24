@@ -172,6 +172,17 @@ public class RevupFlutterPlugin: NSObject, FlutterPlugin, REVUPDelegate {
         }
       }
       result(false)
+    case "setLuckyEventEdgeGesture":
+      if let revupSDK = REVUPInterface.sharedInstance() {
+        if let args = call.arguments as? Dictionary<String, Any>{
+          if let isEdgeGesture = args["isEdgeGesture"] as? Bool {
+            revupSDK.setLuckyEventEdgeGesture(isEdgeGesture)
+            result(true)
+            return;
+          }
+        }
+      }
+      result(false)
     case "setLuckyEventHashMark":
       if let revupSDK = REVUPInterface.sharedInstance() {
         if let args = call.arguments as? Dictionary<String, Any>{
@@ -201,6 +212,29 @@ public class RevupFlutterPlugin: NSObject, FlutterPlugin, REVUPDelegate {
             revupSDK.setLuckyEventExtraParam(key, value: value)
             result(true)
             return;
+          }
+        }
+      }
+      result(false)
+    case "setLuckyEventTheme":
+      // Dart 의 RevupLuckyEventTheme 문자열을 iOS 의 UIUserInterfaceStyle 로 옮긴다.
+      // system 은 단말 설정을 따르는 .unspecified 에 해당한다.
+      // 알 수 없는 값이면 설정을 바꾸지 않고 false 를 돌려준다.
+      if let revupSDK = REVUPInterface.sharedInstance() {
+        if let args = call.arguments as? Dictionary<String, Any>{
+          if let theme = args["theme"] as? String {
+            let style: UIUserInterfaceStyle?
+            switch theme {
+            case "light": style = .light
+            case "dark": style = .dark
+            case "system": style = .unspecified
+            default: style = nil
+            }
+            if let style = style {
+              revupSDK.setLuckyEventUserInterfaceStyle(style)
+              result(true)
+              return;
+            }
           }
         }
       }

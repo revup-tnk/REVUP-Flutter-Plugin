@@ -1,3 +1,35 @@
+## 1.0.4
+
+#### Android
+* 네이티브 SDK 를 `1.0.6` 으로 갱신 (revupCore / revupAndroid / revupLuckyEvent)
+* **[추가] 복권 화면 테마 옵션** — `setLuckyEventTheme(RevupLuckyEventTheme)`
+  * `RevupLuckyEventTheme.light` / `dark` / `system` 중 선택
+  * 네이티브 SDK 의 `RevupLuckyEvent.setEventTheme()` 로 전달된다
+
+#### iOS
+* 네이티브 SDK 를 `REVUP 1.1.9` 로 갱신
+* **[추가] 복권 화면 테마 옵션** — Android 와 동일한 `setLuckyEventTheme` 사용
+  * 네이티브 SDK 의 `setLuckyEventUserInterfaceStyle:` 로 전달된다
+  * `system` 은 `UIUserInterfaceStyleUnspecified` 에 대응한다
+
+#### 공통
+```dart
+// 단말의 다크모드 설정을 따른다 (기본값)
+await revup.setLuckyEventTheme(RevupLuckyEventTheme.system);
+// 단말 설정과 무관하게 항상 라이트로 고정
+await revup.setLuckyEventTheme(RevupLuckyEventTheme.light);
+
+await revup.showLuckyEvent();
+```
+
+* 적용 범위는 **네이티브 영역**이다 — 화면 배경, 상태바 아이콘 대비, SDK 안내 팝업.
+  복권 웹 콘텐츠는 웹이 정한 대로 표시된다.
+* `showLuckyEvent()` 보다 먼저 호출해야 한다. 이미 떠 있는 화면에는 반영되지 않는다.
+
+> **동작 변경:** 기본값이 `system` 이므로, 아무것도 설정하지 않으면 다크모드 단말에서
+> 복권 화면의 네이티브 영역이 다크로 표시된다. 기존처럼 항상 라이트로 두려면
+> `setLuckyEventTheme(RevupLuckyEventTheme.light)` 를 명시해야 한다.
+
 ## 1.0.3
 
 #### iOS

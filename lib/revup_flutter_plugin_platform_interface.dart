@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'revup_flutter_plugin_method_channel.dart';
+import 'revup_lucky_event_theme.dart';
 
 abstract class RevupFlutterPluginPlatform extends PlatformInterface {
   /// Constructs a RevupFlutterPluginPlatform.
@@ -98,6 +99,10 @@ abstract class RevupFlutterPluginPlatform extends PlatformInterface {
     throw UnimplementedError('setLuckyEventUseSafeAreaWebView() has not been implemented.');
   }
 
+  Future<bool?> setLuckyEventEdgeGesture(bool isEdgeGesture) {
+    throw UnimplementedError('setLuckyEventEdgeGesture() has not been implemented.');
+  }
+
   Future<bool?> setLuckyEventHashMark(String hashMark) {
     throw UnimplementedError('setLuckyEventHashMark() has not been implemented.');
   }
@@ -108,6 +113,10 @@ abstract class RevupFlutterPluginPlatform extends PlatformInterface {
 
   Future<bool?> setLuckyEventExtraParam(String key, String value) {
     throw UnimplementedError('setLuckyEventExtraParam() has not been implemented.');
+  }
+
+  Future<bool?> setLuckyEventTheme(RevupLuckyEventTheme theme) {
+    throw UnimplementedError('setLuckyEventTheme() has not been implemented.');
   }
 
   Future<bool?> rewardedVideoShowWithLoad(String unitId) {
