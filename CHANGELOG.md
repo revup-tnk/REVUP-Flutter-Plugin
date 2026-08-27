@@ -8,6 +8,12 @@
 
 #### iOS
 * 네이티브 SDK 를 `REVUP 1.1.9` 로 갱신
+* **[변경] podspec 의 `REVUP/Core` 제약을 하드핀에서 범위로 완화** — `'1.1.5'` → `'~> 1.1.9'`
+  * `REVUP` 의 각 subspec 은 자기 버전과 동일한 `REVUP/Core (= X)` 를 요구한다.
+    코어를 한 버전에 못박으면 매체가 `REVUP/LuckyEvent` 등 다른 subspec 만
+    상위 패치로 올릴 때 CocoaPods 해석이 실패했다.
+  * 하한 `1.1.9` — LuckyEvent 테마가 들어간 버전이자 결함이 있는 `1.1.1` / `1.1.2` 를
+    배제하는 선. 상한은 `1.2.0` 미만이다.
 * **[추가] 복권 화면 테마 옵션** — Android 와 동일한 `setLuckyEventTheme` 사용
   * 네이티브 SDK 의 `setLuckyEventUserInterfaceStyle:` 로 전달된다
   * `system` 은 `UIUserInterfaceStyleUnspecified` 에 대응한다
