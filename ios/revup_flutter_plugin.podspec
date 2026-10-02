@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'revup_flutter_plugin'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'We provide a plugin so that you can integrate revup while developing with Flutter.'
   s.description      = <<-DESC
 Revup SDK for Flutter plugin project.

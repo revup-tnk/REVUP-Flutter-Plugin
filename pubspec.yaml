@@ -1,6 +1,6 @@
 name: revup_flutter_plugin
 description: "We provide a plugin so that you can integrate revup while developing with Flutter."
-version: 1.0.4
+version: 1.0.5
 homepage: https://github.com/revup-tnk/REVUP-Flutter-Plugin
 repository: https://github.com/revup-tnk/REVUP-Flutter-Plugin
 

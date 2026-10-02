@@ -1,6 +1,6 @@
 # Revup Flutter Plugin
-[![pub package](https://img.shields.io/badge/Flutter-1.0.4-blue)](./CHANGELOG.md)
-[![Android](https://img.shields.io/badge/Android-1.0.6-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
+[![pub package](https://img.shields.io/badge/Flutter-1.0.5-blue)](./CHANGELOG.md)
+[![Android](https://img.shields.io/badge/Android-1.0.9-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
 [![iOS](https://img.shields.io/badge/iOS-1.1.9-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
 
 - Android Target API Level : 31+
@@ -130,7 +130,7 @@ android {
 }
 dependencies {
     // BOM 으로 연동하면 어댑터 버전을 개별로 명시할 필요가 없다
-    implementation platform('com.tnkfactory.revup:revup-bom:1.0.6')
+    implementation platform('com.tnkfactory.revup:revup-bom:1.0.9')
 
     implementation 'com.tnkfactory.revup:revupCore'
     implementation 'com.tnkfactory.revup:revupAndroid'
@@ -341,7 +341,7 @@ Future<void> setLuckyEventTheme() async {
 - 이벤트 웹 페이지 자체는 웹에서 정한 대로 표시됩니다
 - **Show 호출 전** 에 설정해야 하며, 이미 떠 있는 화면에는 반영되지 않음
 - 기본값이 `system` 이므로, 별도 설정이 없으면 다크모드 단말에서 화면이 다크로 표시됨
-- Android `1.0.6` / iOS `1.1.9` 이상 필요
+- Android `1.0.9` / iOS `1.1.9` 이상 필요
 <br/>
 
 #### C. Show

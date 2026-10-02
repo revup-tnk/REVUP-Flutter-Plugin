@@ -1,3 +1,20 @@
+## 1.0.5
+
+#### Android
+* 네이티브 SDK 를 `1.0.9` 으로 갱신 (revupCore / revupAndroid / revupLuckyEvent)
+* **[변경] 플러그인 `minSdkVersion` 21 → 24** — 네이티브 SDK `1.0.9` 가 minSdk 24 를 요구한다.
+  Meta(FAN) 비더 어댑터와 `play-services-ads 25.5.0` 이 직접 원인이다.
+  **앱의 `minSdkVersion` 이 23 이하면 이 버전을 적용할 수 없다**
+* 네이티브 `1.0.9` 가 가져오는 변경 (상세는 Android SDK 릴리즈 노트 참조)
+  * SDK 가 넣던 과도한 ProGuard keep 규칙 제거 — Play Console 의 'DEX 코드 최적화' 점수 개선.
+    `adapter.vungle` 이 `com.google.android.gms.**` 전체를 keep 하던 규칙이 가장 컸다
+  * AGP 9 R8 full mode 릴리즈 빌드가 시작 직후 죽던 문제 해결
+  * 네트워크 SDK 최신화 — MAX 13.6.4 / admob 25.5.0 / chartboost 9.14.1 / pangle 8.3.0.4 / vungle 7.7.8
+* 예제 앱의 BOM 을 `1.0.9` 로 갱신
+
+#### iOS
+* 변경 없음 (`REVUP/Core ~> 1.1.9` 유지)
+
 ## 1.0.4
 
 #### Android
