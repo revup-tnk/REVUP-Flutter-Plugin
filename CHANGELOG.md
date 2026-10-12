@@ -1,3 +1,13 @@
+## Unreleased
+
+#### Example
+* **예제 앱 Android 빌드를 Flutter 3.47 에 맞춤** — AGP `8.9.3` → `8.11.1`, Kotlin `2.1.21` → `2.2.20`.
+  Flutter 3.47 은 AGP 8.11.1 · Kotlin 2.2.20 미만인 앱의 빌드를 거부한다
+* Flutter 3.47 마이그레이터가 추가한 `android.builtInKotlin=false` / `android.newDsl=false`
+  (`example/android/gradle.properties`) 와 `analyzer.exclude` (`analysis_options.yaml`) 반영
+* 플러그인 본체는 변경 없음 — 매체 앱 빌드에는 앱의 AGP 가 쓰인다.
+  Flutter 3.47 로 새로 만든 앱(AGP 9.1.0 · Gradle 9.3.1)에서 1.1.0 빌드 확인
+
 ## 1.1.0
 
 #### iOS
