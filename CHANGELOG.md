@@ -1,3 +1,15 @@
+## 1.1.0
+
+#### iOS
+* **네이티브 SDK 를 `REVUP 1.1.11` 로 갱신** — podspec `REVUP/Core` 제약을 `'~> 1.1.9'` → `'~> 1.1.11'`
+* **[변경] iOS 최소 지원 버전 13.0 → 15.0** (Xcode 27 대응) — podspec `s.platform` 을 `'15.0'` 으로 상향.
+  **앱의 iOS deployment target 이 14.x 이하면 이 릴리스를 적용할 수 없다.**
+  REVUP iOS SDK 자체는 1.1.11 에서도 13.0 을 지원하므로, 15.0 은 플러그인 쪽 요구사항이다
+* README / 마이그레이션 문서의 Podfile 예시를 `1.1.11` + 15.0 + Xcode 27 용 `post_install` 로 갱신
+
+#### Android
+* 변경 없음 (`revupCore` / `revupAndroid` / `revupLuckyEvent` `1.0.9` 유지)
+
 ## 1.0.5
 
 #### Android

@@ -1,11 +1,11 @@
 # Revup Flutter Plugin
-[![pub package](https://img.shields.io/badge/Flutter-1.0.5-blue)](./CHANGELOG.md)
+[![pub package](https://img.shields.io/badge/Flutter-1.1.0-blue)](./CHANGELOG.md)
 [![Android](https://img.shields.io/badge/Android-1.0.9-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
-[![iOS](https://img.shields.io/badge/iOS-1.1.9-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
+[![iOS](https://img.shields.io/badge/iOS-1.1.11-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
 
 - Android Target API Level : 31+
 - Android Minimum API Level : 21
-- iOS Minimum Version : 12.0
+- iOS Minimum Version : 15.0
 - Xcode Minimum Version : Xcode 16.0
 <details>
 <summary>Networks Version</summary>
@@ -159,7 +159,7 @@ dependencies {
 ### 3. Setup iOS
 #### A. Setup Podfile
 ```ruby
-platform :ios, '13.0'
+platform :ios, '15.0'  # iOS 최소 지원 15.0 (Xcode 27 대응)
 
 target 'Runner' do
   # REVUP.xcframework 는 정적 라이브러리이므로 static linkage 가 필요하다
@@ -168,32 +168,45 @@ target 'Runner' do
 
   # REVUP 은 단일 pod + subspec 구조다. 필요한 subspec 만 골라 추가한다.
   # (umbrella 인 pod 'REVUP' 를 쓰면 default_subspecs 로 모든 광고 네트워크가 딸려온다)
-  pod 'REVUP/Core', '1.1.9'
-  pod 'REVUP/LuckyEvent', '1.1.9'
-  pod 'REVUP/AdManager', '1.1.9'
-  pod 'REVUP/AdMob', '1.1.9'
-  pod 'REVUP/ChartBoost', '1.1.9'
-  pod 'REVUP/Pangle', '1.1.9'
-  pod 'REVUP/Vungle', '1.1.9'
-  pod 'REVUP/TnkPub', '1.1.9'
-  pod 'REVUP/Max', '1.1.9'
-  pod 'REVUP/MaxMediaAdManager', '1.1.9'
-  pod 'REVUP/MaxMediaAdMob', '1.1.9'
-  pod 'REVUP/MaxMediaBidMachine', '1.1.9'
-  pod 'REVUP/MaxMediaBigo', '1.1.9'
-  pod 'REVUP/MaxMediaChartBoost', '1.1.9'
-  pod 'REVUP/MaxMediaDTExchange', '1.1.9'
-  pod 'REVUP/MaxMediaFan', '1.1.9'
-  pod 'REVUP/MaxMediaInMobi', '1.1.9'
-  pod 'REVUP/MaxMediaIronSource', '1.1.9'
-  pod 'REVUP/MaxMediaLine', '1.1.9'
-  pod 'REVUP/MaxMediaMobVista', '1.1.9'
-  pod 'REVUP/MaxMediaMoloco', '1.1.9'
-  pod 'REVUP/MaxMediaOgury', '1.1.9'
-  pod 'REVUP/MaxMediaPangle', '1.1.9'
-  pod 'REVUP/MaxMediaPubMatic', '1.1.9'
-  pod 'REVUP/MaxMediaUnityAds', '1.1.9'
-  pod 'REVUP/MaxMediaVungle', '1.1.9'
+  pod 'REVUP/Core', '1.1.11'
+  pod 'REVUP/LuckyEvent', '1.1.11'
+  pod 'REVUP/AdManager', '1.1.11'
+  pod 'REVUP/AdMob', '1.1.11'
+  pod 'REVUP/ChartBoost', '1.1.11'
+  pod 'REVUP/Pangle', '1.1.11'
+  pod 'REVUP/Vungle', '1.1.11'
+  pod 'REVUP/TnkPub', '1.1.11'
+  pod 'REVUP/Max', '1.1.11'
+  pod 'REVUP/MaxMediaAdManager', '1.1.11'
+  pod 'REVUP/MaxMediaAdMob', '1.1.11'
+  pod 'REVUP/MaxMediaBidMachine', '1.1.11'
+  pod 'REVUP/MaxMediaBigo', '1.1.11'
+  pod 'REVUP/MaxMediaChartBoost', '1.1.11'
+  pod 'REVUP/MaxMediaDTExchange', '1.1.11'
+  pod 'REVUP/MaxMediaFan', '1.1.11'
+  pod 'REVUP/MaxMediaInMobi', '1.1.11'
+  pod 'REVUP/MaxMediaIronSource', '1.1.11'
+  pod 'REVUP/MaxMediaLine', '1.1.11'
+  pod 'REVUP/MaxMediaMobVista', '1.1.11'
+  pod 'REVUP/MaxMediaMoloco', '1.1.11'
+  pod 'REVUP/MaxMediaOgury', '1.1.11'
+  pod 'REVUP/MaxMediaPangle', '1.1.11'
+  pod 'REVUP/MaxMediaPubMatic', '1.1.11'
+  pod 'REVUP/MaxMediaUnityAds', '1.1.11'
+  pod 'REVUP/MaxMediaVungle', '1.1.11'
+end
+
+# Xcode 27 대응 — Pods 타겟의 deployment target 을 15.0 이상으로 맞춘다
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # Xcode 27 은 15.0 미만 deployment target 을 지원하지 않는다
+      current = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+      if current.nil? || current.to_f < 15.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      end
+    end
+  end
 end
 ```
 - 프로젝트 파일 내에 {projectroot}/ios/Podfile 파일에 `pod` 추가
