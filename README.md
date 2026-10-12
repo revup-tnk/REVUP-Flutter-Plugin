@@ -1,10 +1,11 @@
 # Revup Flutter Plugin
-[![pub package](https://img.shields.io/badge/Flutter-1.1.0-blue)](./CHANGELOG.md)
+[![pub package](https://img.shields.io/badge/Flutter-1.2.0-blue)](./CHANGELOG.md)
 [![Android](https://img.shields.io/badge/Android-1.0.9-blue)](https://github.com/tnkfactory/REVUP-ANDROID-SDK)
 [![iOS](https://img.shields.io/badge/iOS-1.1.11-blue)](https://github.com/revup-tnk/REVUP-iOS-SDK)
 
+- Flutter Minimum Version : 3.44 (Dart 3.12) — 1.2.0 부터. 그보다 낮은 Flutter 에서는 pub 이 1.1.0 을 고른다
 - Android Target API Level : 31+
-- Android Minimum API Level : 21
+- Android Minimum API Level : 24
 - iOS Minimum Version : 15.0
 - Xcode Minimum Version : Xcode 16.0
 <details>
@@ -75,7 +76,7 @@ flutter pub add revup_flutter_plugin
 
 #### B. Specific version Installation
 ```ruby
-flutter pub add revup_flutter_plugin:4.2.0
+flutter pub add revup_flutter_plugin:1.2.0
 ```
 - 프로젝트의 IDE루트 경로에서 터미널을 열고 위과 같이 특정 버전을 추가로 실행하여 플러그인을 설치    
 <br/><br/><br/>
@@ -98,22 +99,29 @@ flutter pub add revup_flutter_plugin:4.2.0
 ```gradle
 allprojects {
     repositories {
-        maven { url 'https://repository.tnkad.net:8443/repository/android/' }
-        maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }                                 // max 연동 시 추가
-        maven { url "https://verve.jfrog.io/artifactory/verve-gradle-release" }                       // max 연동 시 추가
-	maven { url "https://artifactory.bidmachine.io/bidmachine" }                                  // max 연동 시 추가
-	maven { url "https://maven.ogury.co" }                                                        // max 연동 시 추가
-        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" } // max 연동 시 추가
-	maven { url "https://android-sdk.is.com" }                                                    // max 연동 시 추가
-        maven { url "https://artifact.bytedance.com/repository/pangle" }                              // max 혹은 pangle 연동 시 추가
-        maven { url 'https://cboost.jfrog.io/artifactory/chartboost-ads/' }                           // chartboost 연동 시 추가
+        google()
+        mavenCentral()
+        maven { url "https://repository.tnkad.net/repository/public/" }   // [필수] Revup
     }
 }
 ```
-- Revup SDK는 Maven Central이 아니라 자체 Maven 저장소
-  (`https://repository.tnkad.net:8443/repository/android/`)에 배포됩니다. **저장소 추가는 필수입니다.**
+- Revup SDK는 Maven Central이 아니라 자체 Maven 저장소에 배포됩니다. **저장소 추가는 필수입니다.**
+- 이 저장소 하나로 충분합니다. 미러링·그룹 설정이 되어 있어 네트워크 어댑터가 쓰는 SDK
+  (applovin · bytedance · chartboost · bidmachine · ogury · mintegral · ironsource · pubmatic · verve 등)도
+  이 경로로 함께 받습니다. 예전 안내대로 네트워크별 저장소를 나열해 두었다면 지워도 됩니다
 - 프로젝트 파일 내에 {projectroot}/android/build.gradle 파일에 `maven` 추가
-- max를 연동 시 6개를 추가하고, chartboost를 연동 시 1개를 추가
+
+최근 Flutter 템플릿처럼 `android/build.gradle.kts` (Kotlin DSL) 를 쓰는 프로젝트는 문법이 다르다.
+위 Groovy 예시를 그대로 붙이면 빌드 스크립트 오류가 난다.
+```kotlin
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://repository.tnkad.net/repository/public/") }   // [필수] Revup
+    }
+}
+```
 <br/>
 
 ##### 나. Setup Module Gradle
@@ -142,6 +150,33 @@ dependencies {
     implementation 'com.tnkfactory.revup:adapter.pangle'                    // pangle
     implementation 'com.tnkfactory.revup:adapter.vungle'                    // vungle
     implementation 'com.tnkfactory.revup:adapter.tnkpub'                    // tnkpub
+}
+```
+`android/app/build.gradle.kts` (Kotlin DSL) 에서는 이렇게 쓴다.
+```kotlin
+android {
+    defaultConfig {
+        manifestPlaceholders += mapOf(
+            "adiscope_media_id" to "media id 기입 필요",
+            "adiscope_media_secret" to "media secret 기입 필요",
+            "adiscope_sub_domain" to "sub domain 기입 필요",   // 옵션값
+            "revup_admob_id" to "admob_app_id 기입 필요",      // Admob 사용 시 필요
+        )
+    }
+}
+dependencies {
+    implementation(platform("com.tnkfactory.revup:revup-bom:1.0.9"))
+
+    implementation("com.tnkfactory.revup:revupCore")
+    implementation("com.tnkfactory.revup:revupAndroid")
+    implementation("com.tnkfactory.revup:revupLuckyEvent")                 // 복권(Lucky Event) 사용 시
+
+    implementation("com.tnkfactory.revup:adapter.chartboost")              // chartboost
+    implementation("com.tnkfactory.revup:adapter.max")                     // max
+    implementation("com.tnkfactory.revup:adapter.admob")                   // admob
+    implementation("com.tnkfactory.revup:adapter.pangle")                  // pangle
+    implementation("com.tnkfactory.revup:adapter.vungle")                  // vungle
+    implementation("com.tnkfactory.revup:adapter.tnkpub")                  // tnkpub
 }
 ```
 - 애디스콥 측에 media_id 와 media_secret, sub_domain 문의!
@@ -196,9 +231,29 @@ target 'Runner' do
   pod 'REVUP/MaxMediaVungle', '1.1.11'
 end
 
-# Xcode 27 대응 — Pods 타겟의 deployment target 을 15.0 이상으로 맞춘다
 post_install do |installer|
+  # Apple Silicon 시뮬레이터 대응 — 아래 "Apple Silicon 시뮬레이터에서 빌드가 안 될 때" 참고
+  support = File.join(installer.sandbox.root, 'Target Support Files')
+  bigo_key = /\AEXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64/
+  Dir.glob(File.join(support, 'BigoADS*', '*.xcconfig')).each do |path|
+    content = File.read(path)
+    cleaned = content.lines.reject { |l| l =~ bigo_key }.join
+    File.write(path, cleaned) if cleaned != content
+  end
+  installer.pods_project.targets.select { |t| t.name.start_with?('BigoADS') }.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete_if { |key, _| key =~ bigo_key }
+    end
+  end
+  Dir.glob(File.join(support, 'IronSourceAdQualitySDK*', '*.xcconfig')).each do |path|
+    content = File.read(path)
+    cleaned = content.gsub(/^(EXCLUDED_ARCHS\[sdk=iphonesimulator\*\] = .*?)\barm64e\b ?/) { $1 }
+    File.write(path, cleaned) if cleaned != content
+  end
+
+  # Xcode 27 대응 — Pods 타겟의 deployment target 을 15.0 이상으로 맞춘다
   installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
     target.build_configurations.each do |config|
       # Xcode 27 은 15.0 미만 deployment target 을 지원하지 않는다
       current = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
@@ -212,6 +267,18 @@ end
 - 프로젝트 파일 내에 {projectroot}/ios/Podfile 파일에 `pod` 추가
 - Third Party 네트워크사들을 확인 후 필요한 네트워크사들만 추가
 - Adapter Version이 상이할 경우 Initialize시 Xcode Log를 통해 확인 가능<br/>
+
+##### Apple Silicon 시뮬레이터에서 빌드가 안 될 때
+`Unable to find a destination … iOS Simulator platform doesn't match Runner.app's supported platforms`
+로 시뮬레이터 빌드가 실패하면 앱에서 arm64 가 빠진 것이다. iOS 26+ 시뮬레이터는 arm64 로만 돈다.
+- Flutter 는 Pods 빌드 설정에 `EXCLUDED_ARCHS … arm64` 문자열이 보이면 "arm64 미지원"으로 판정해 앱에서도 arm64 를 뺀다
+- `REVUP/MaxMediaBigo` 가 가져오는 BigoADS 의 옛 설정(Xcode 12 + Intel Mac 전용)과,
+  IronSourceAdQualitySDK 의 `arm64e`(Flutter 3.47 미만에서만) 가 이 판정에 잘못 걸린다
+- 위 `post_install` 의 앞부분이 그 설정만 걷어낸다. 실기기 빌드에는 영향이 없다
+- 적용 후에도 이전 빌드가 남긴 설정 때문에 한 번 더 실패하면, 아래로 Xcode 설정을 다시 만든 뒤 실행한다
+```bash
+flutter build ios --config-only --simulator
+```
 <br/>
 
 #### B. Setup Plist

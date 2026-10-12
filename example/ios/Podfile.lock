@@ -202,7 +202,7 @@ PODS:
   - REVUP/Vungle (1.1.11):
     - REVUP/Core (= 1.1.11)
     - REVUPMediaVungle (= 1.1.0)
-  - revup_flutter_plugin (1.1.0):
+  - revup_flutter_plugin (1.2.0):
     - Flutter
     - REVUP/Core (~> 1.1.11)
   - REVUPLuckyEvent (1.1.10)
@@ -406,7 +406,7 @@ SPEC CHECKSUMS:
   ChartboostSDK: 1a74d11450b2f5de529edc397ca434f11701232a
   FBAudienceNetwork: 85d18a65c9e35bc426bd4664cf3ae2a1172d7b60
   FiveAd: febdd24752d269ddc9145788f27060e816c227c8
-  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  Flutter: 71a624a5bc0c04062bf19101d501e466baf2fb47
   Fyber_Marketplace_SDK: 1a880b530921ddf07a74982e163ab56eaf90e932
   Google-Mobile-Ads-SDK: 6e501ace4af8d63e967bd45497c8b2b05821163d
   GoogleUserMessagingPlatform: befe603da6501006420c206222acd449bba45a9c
@@ -422,7 +422,7 @@ SPEC CHECKSUMS:
   OMSDK_Ogury: 38a1f4c2237da6861909da9290dd1224ddeb3de4
   OpenWrapSDK: e6aaa2c0265c137bca1cd754ff23c8390bcead0d
   REVUP: 7c477c99c3821a57e7c8c8c7af8f6e46fab21893
-  revup_flutter_plugin: 1d712245fec9b44ade38e1feb9fbf69d12e74641
+  revup_flutter_plugin: 73a41a4850a4a4930eb6ab0836e052e83c168f18
   REVUPLuckyEvent: e3c088d06074718d1e01711d56ce5525e6e5b967
   REVUPMediaAdManager: de642383595c267c3e8d4efa51451aace0748288
   REVUPMediaAdMob: ba9c7a3ebf398f73ee12c7099840d19d8f3a792e
@@ -452,6 +452,6 @@ SPEC CHECKSUMS:
   UnityCoherenceLib: d9be08c5b9c2880cb220c7ecd643f97ebda422b7
   VungleAds: 03d93126f39d6056055a8b9edca701c6a3391d8b
 
-PODFILE CHECKSUM: 47fc5d95a64639b497b0068a72f3d0b9b76142d9
+PODFILE CHECKSUM: fa615df58dad565137097c852708d0dd1fe5a781
 
 COCOAPODS: 1.16.2

@@ -124,10 +124,12 @@ implementation 'com.tnkfactory.revup:adapter.admob'
 
 ```gradle
 // 아래의 저장소가 없을 경우 추가
-maven { url 'https://repository.tnkad.net:8443/repository/android/' }
+maven { url "https://repository.tnkad.net/repository/public/" }
 ```
 
-어댑터별 추가 저장소는 [example 앱의 `android/build.gradle`](../example/android/build.gradle)을 참고하세요.
+이 저장소 하나로 충분합니다. 미러링·그룹 설정이 되어 있어 네트워크 어댑터가 쓰는 SDK 도 함께 받습니다.
+Adiscope 때 네트워크별 저장소를 나열해 두었다면 지워도 됩니다.
+`build.gradle.kts` 를 쓰는 프로젝트는 [README](../README.md#가-setup-project-gradle)의 Kotlin DSL 예시를 참고하세요.
 
 ---
 
