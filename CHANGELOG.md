@@ -1,3 +1,40 @@
+## 1.2.0
+
+#### 공통
+* **[변경] 최소 Flutter 3.44 / Dart 3.12** — 플러그인을 built-in Kotlin 으로 옮기면서 Flutter 가이드가
+  요구하는 최소 버전이다. **Flutter 3.44 미만인 앱에서는 pub 이 1.1.0 을 고른다**(빌드는 깨지지 않는다).
+  Xcode 27 대응이 들어간 Flutter 는 3.44 패치 라인과 3.47 이상이다
+
+#### Android
+* **built-in Kotlin 으로 이전** — 플러그인이 `kotlin-android` 를 직접 적용하지 않는다.
+  `kotlinOptions` → `kotlin { compilerOptions }`. Flutter 3.47 의
+  "plugins that apply Kotlin Gradle Plugin (KGP)" 경고가 사라지고, 이후 Flutter 에서 빌드가 막히지 않는다
+* 플러그인 Java/Kotlin 바이트코드 타깃 1.8 → 17 (Flutter 플러그인 템플릿과 같음)
+* 네이티브 SDK 변경 없음 (`revupCore` / `revupAndroid` / `revupLuckyEvent` `1.0.9`)
+* 확인한 앱 구성 (Flutter 3.47.7): AGP 9.1.1 built-in Kotlin 켬 · AGP 9.1.0 built-in Kotlin 끔(템플릿 기본) ·
+  AGP 8.11.1. debug / R8 release 빌드, 실기기에서 시작·채널 호출 정상
+
+#### iOS
+* 네이티브 SDK 변경 없음 (`REVUP/Core ~> 1.1.11`)
+
+#### 문서
+* README — 최소 Flutter 3.44 명시, Android 최소 API 21 → 24 정정(1.0.5 부터 24), 설치 예시 버전 정정
+* README — **Maven 저장소를 `https://repository.tnkad.net/repository/public/` 하나로 안내**
+  (Android 공개 가이드와 같음). 예전 목록은 PubMatic 저장소가 빠져 MAX 연동 시
+  `com.pubmatic.sdk:openwrap` 을 찾지 못했다
+* README — `build.gradle.kts` (Kotlin DSL) 프로젝트용 저장소·`manifestPlaceholders`·의존성 예시 추가
+* README — **Apple Silicon 시뮬레이터 빌드 실패 대응** `post_install` 추가. BigoADS(`REVUP/MaxMediaBigo`)의
+  옛 Xcode 12 설정과 IronSourceAdQualitySDK 의 `arm64e` 를 Flutter 가 "arm64 미지원"으로 오판해
+  앱에서 arm64 를 빼던 문제
+
+#### Example
+* Android: AGP `8.9.3` → `9.1.1`, Gradle `8.14` → `9.3.1`, Kotlin `2.1.21` → `2.3.20`,
+  built-in Kotlin 사용(`android.builtInKotlin=true`), Maven 저장소 하나로 정리.
+  Android API 37 을 지원하는 것은 AGP 9.1.1 부터다
+* iOS: Podfile 에 위 Apple Silicon 시뮬레이터 대응 추가
+* Flutter 3.47 마이그레이터 반영 — `android.newDsl=false`, `analyzer.exclude`,
+  `AppFrameworkInfo.plist` 의 `MinimumOSVersion` 제거
+
 ## 1.1.0
 
 #### iOS

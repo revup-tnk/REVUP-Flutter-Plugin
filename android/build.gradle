@@ -2,14 +2,14 @@ group 'com.tnkfactory.revup.flutter'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '2.1.21'
+    ext.kotlin_version = '2.3.20'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.9.3'
+        classpath 'com.android.tools.build:gradle:9.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -22,20 +22,19 @@ allprojects {
     }
 }
 
+// built-in Kotlin (1.2.0~): kotlin-android 를 직접 적용하지 않는다.
+// AGP 9 는 Kotlin 컴파일을 내장하고, built-in Kotlin 을 끈 앱(android.builtInKotlin=false)이나
+// AGP 8 앱에서는 Flutter Gradle 플러그인(3.44+)이 대신 KGP 를 적용한다.
+// 그래서 pubspec 의 최소 Flutter 가 3.44 다.
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     namespace "com.tnkfactory.revup.flutter"
     compileSdk 36
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     sourceSets {
@@ -48,6 +47,12 @@ android {
     }
     lint {
         targetSdk = 36
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

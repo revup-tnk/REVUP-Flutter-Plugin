@@ -64,6 +64,35 @@ target 'Runner' do
 end
 
 post_install do |installer|
+  # Apple Silicon 시뮬레이터(iOS 26+)는 arm64 만 돈다. Flutter 는 Pods 빌드 설정에서
+  # /EXCLUDED_ARCHS.*arm64/ 가 보이면 "arm64 미지원 플러그인"으로 판정해 앱에서도 arm64 를 빼고,
+  # 그러면 시뮬레이터 빌드가 실패한다. 아래 두 pod 가 오탐을 일으키므로 그 설정만 걷어낸다.
+  # 실기기 빌드에는 영향이 없다.
+  support = File.join(installer.sandbox.root, 'Target Support Files')
+
+  # BigoADS (REVUP/MaxMediaBigo): Xcode 12 + Intel Mac 전용 설정
+  # EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200__BUILD_* = arm64 ...
+  # 지금 빌드에는 쓰이지 않지만 Flutter 3.47 에서도 오탐된다.
+  bigo_key = /\AEXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64/
+  Dir.glob(File.join(support, 'BigoADS*', '*.xcconfig')).each do |path|
+    content = File.read(path)
+    cleaned = content.lines.reject { |l| l =~ bigo_key }.join
+    File.write(path, cleaned) if cleaned != content
+  end
+  installer.pods_project.targets.select { |t| t.name.start_with?('BigoADS') }.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete_if { |key, _| key =~ bigo_key }
+    end
+  end
+
+  # IronSourceAdQualitySDK: 시뮬레이터 EXCLUDED_ARCHS 의 'arm64e' 를 Flutter 3.47 미만이 arm64 로 오인한다.
+  # arm64e 는 원래 빌드 대상이 아니므로 빼도 결과는 같다.
+  Dir.glob(File.join(support, 'IronSourceAdQualitySDK*', '*.xcconfig')).each do |path|
+    content = File.read(path)
+    cleaned = content.gsub(/^(EXCLUDED_ARCHS\[sdk=iphonesimulator\*\] = .*?)\barm64e\b ?/) { $1 }
+    File.write(path, cleaned) if cleaned != content
+  end
+
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
     # Xcode 27 은 deployment target 15.0 미만을 지원하지 않는다 — Pods 최소값을 15.0 으로 맞춘다.
