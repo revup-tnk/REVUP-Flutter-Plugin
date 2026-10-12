@@ -139,7 +139,7 @@ REVUP은 **단일 pod + subspec** 구조입니다. Adiscope처럼 `AdiscopeMedia
 독립 pod이 있는 것이 아니라 `REVUP/AdMob` 형태의 subspec을 지정합니다.
 
 ```ruby
-platform :ios, '13.0'
+platform :ios, '15.0'  # iOS 최소 지원 15.0 (Xcode 27 대응)
 
 target 'Runner' do
   # REVUP.xcframework 는 정적 라이브러리이므로 static linkage 가 필요합니다
@@ -150,10 +150,23 @@ target 'Runner' do
   # pod 'Adiscope/LuckyEvent', '5.4.0'
 
   # 변경 후 — 필요한 subspec 만 추가
-  pod 'REVUP/Core', '1.1.9'
-  pod 'REVUP/LuckyEvent', '1.1.9'
-  pod 'REVUP/AdMob', '1.1.9'
+  pod 'REVUP/Core', '1.1.11'
+  pod 'REVUP/LuckyEvent', '1.1.11'
+  pod 'REVUP/AdMob', '1.1.11'
   # ...
+end
+
+# Xcode 27 대응 — Pods 타겟의 deployment target 을 15.0 이상으로 맞춥니다
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # Xcode 27 은 15.0 미만 deployment target 을 지원하지 않는다
+      current = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+      if current.nil? || current.to_f < 15.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      end
+    end
+  end
 end
 ```
 
@@ -178,11 +191,16 @@ end
 
 
 
-1.1.9를 사용하세요.
+1.1.11을 사용하세요.
 
-| 버전 | podspec 자기정합성 | 최소 배포 타겟 |
+| 버전 | podspec 자기정합성 | SDK 최소 배포 타겟 |
 | --- | --- | --- |
-| **1.1.9** (최신) | ✅ OK | iOS 13.0 |
+| **1.1.11** (최신) | ✅ OK | iOS 13.0 |
+| 1.1.9 | ✅ OK | iOS 13.0 |
+
+> **플러그인 `1.1.0` 부터 iOS 최소 지원 버전은 15.0 입니다**(Xcode 27 대응).
+> 위 표는 REVUP iOS SDK 자체의 최소 배포 타겟이며 1.1.11 에서도 13.0 입니다 —
+> 15.0 상향은 플러그인 쪽 요구사항입니다.
 
 
 > 검증 방법: `rm -f Podfile.lock && pod install && pod install` — 두 번 다 통과해야 정상입니다.

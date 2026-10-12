@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '15.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -31,31 +31,31 @@ target 'Runner' do
   use_frameworks! :linkage => :static
   use_modular_headers!
 
-  pod 'REVUP/LuckyEvent', '1.1.9'
-  pod 'REVUP/AdManager', '1.1.9'
-  pod 'REVUP/AdMob', '1.1.9'
-  pod 'REVUP/ChartBoost', '1.1.9'
-  pod 'REVUP/Pangle', '1.1.9'
-  pod 'REVUP/TnkPub', '1.1.9'
-  pod 'REVUP/Vungle', '1.1.9'
-  pod 'REVUP/Max', '1.1.9'
-  pod 'REVUP/MaxMediaAdManager', '1.1.9'
-  pod 'REVUP/MaxMediaAdMob', '1.1.9'
-  pod 'REVUP/MaxMediaBidMachine', '1.1.9'
-  pod 'REVUP/MaxMediaBigo', '1.1.9'
-  pod 'REVUP/MaxMediaChartBoost', '1.1.9'
-  pod 'REVUP/MaxMediaDTExchange', '1.1.9'
-  pod 'REVUP/MaxMediaFan', '1.1.9'
-  pod 'REVUP/MaxMediaInMobi', '1.1.9'
-  pod 'REVUP/MaxMediaIronSource', '1.1.9'
-  pod 'REVUP/MaxMediaLine', '1.1.9'
-  pod 'REVUP/MaxMediaMobVista', '1.1.9'
-  pod 'REVUP/MaxMediaMoloco', '1.1.9'
-  pod 'REVUP/MaxMediaOgury', '1.1.9'
-  pod 'REVUP/MaxMediaPangle', '1.1.9'
-  pod 'REVUP/MaxMediaPubMatic', '1.1.9'
-  pod 'REVUP/MaxMediaUnityAds', '1.1.9'
-  pod 'REVUP/MaxMediaVungle', '1.1.9'
+  pod 'REVUP/LuckyEvent', '1.1.11'
+  pod 'REVUP/AdManager', '1.1.11'
+  pod 'REVUP/AdMob', '1.1.11'
+  pod 'REVUP/ChartBoost', '1.1.11'
+  pod 'REVUP/Pangle', '1.1.11'
+  pod 'REVUP/TnkPub', '1.1.11'
+  pod 'REVUP/Vungle', '1.1.11'
+  pod 'REVUP/Max', '1.1.11'
+  pod 'REVUP/MaxMediaAdManager', '1.1.11'
+  pod 'REVUP/MaxMediaAdMob', '1.1.11'
+  pod 'REVUP/MaxMediaBidMachine', '1.1.11'
+  pod 'REVUP/MaxMediaBigo', '1.1.11'
+  pod 'REVUP/MaxMediaChartBoost', '1.1.11'
+  pod 'REVUP/MaxMediaDTExchange', '1.1.11'
+  pod 'REVUP/MaxMediaFan', '1.1.11'
+  pod 'REVUP/MaxMediaInMobi', '1.1.11'
+  pod 'REVUP/MaxMediaIronSource', '1.1.11'
+  pod 'REVUP/MaxMediaLine', '1.1.11'
+  pod 'REVUP/MaxMediaMobVista', '1.1.11'
+  pod 'REVUP/MaxMediaMoloco', '1.1.11'
+  pod 'REVUP/MaxMediaOgury', '1.1.11'
+  pod 'REVUP/MaxMediaPangle', '1.1.11'
+  pod 'REVUP/MaxMediaPubMatic', '1.1.11'
+  pod 'REVUP/MaxMediaUnityAds', '1.1.11'
+  pod 'REVUP/MaxMediaVungle', '1.1.11'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
@@ -66,5 +66,12 @@ end
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
+    # Xcode 27 은 deployment target 15.0 미만을 지원하지 않는다 — Pods 최소값을 15.0 으로 맞춘다.
+    target.build_configurations.each do |config|
+      current = config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+      if current.nil? || current.to_f < 15.0
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      end
+    end
   end
 end
